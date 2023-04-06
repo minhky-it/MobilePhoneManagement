@@ -10,20 +10,22 @@ using System.Windows.Forms;
 
 namespace SE_Project
 {
-    public partial class PlaceOrders : Form
+    public partial class Cart : Form
     {
-        private Cart cart;
-        PlaceOrders_Object po1 = new PlaceOrders_Object("");
-        public PlaceOrders()
+        PlaceOrders_Object po1;
+        public Cart(PlaceOrders_Object po)
         {
             InitializeComponent();
+            po1 = po;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Cart_Load(object sender, EventArgs e)
         {
+        }
 
-            cart = new Cart(po1);
-            cart.Show();
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
