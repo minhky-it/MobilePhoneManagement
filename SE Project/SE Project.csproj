@@ -46,14 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ExportOrders.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ExportOrders.Designer.cs">
+      <DependentUpon>ExportOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlaceOrders.Designer.cs">
+      <DependentUpon>PlaceOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WareHouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WareHouse.Designer.cs">
+      <DependentUpon>WareHouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="WareHouse.resx">
+      <DependentUpon>WareHouse.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
