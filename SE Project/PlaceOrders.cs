@@ -25,5 +25,10 @@ namespace SE_Project
             cart = new Cart(po1);
             cart.Show();
         }
+
+        private void PlaceOrders_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

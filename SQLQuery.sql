@@ -32,9 +32,10 @@ CREATE TABLE Product(
 CREATE TABLE WarehouseReceipt(
 	receiptID varchar(50) PRIMARY KEY,
 	nameDeliver varchar(50),
+	circular varchar(100),
 	inputDate Date,
-	location varchar(255),
 	inputStock varchar(255),
+	location varchar(255),
 	productID varchar(50),
 	staffID varchar(50),
 	total float,

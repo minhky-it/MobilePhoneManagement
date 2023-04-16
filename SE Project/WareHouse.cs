@@ -16,5 +16,10 @@ namespace SE_Project
         {
             InitializeComponent();
         }
+
+        private void mainForm_Load(object sender, EventArgs e)
+        {
+            txtNameDeliverer.Focus();
+        }
     }
 }
