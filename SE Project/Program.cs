@@ -16,9 +16,7 @@ namespace SE_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new PlaceOrders());
             Application.Run(new MainForm());
-
         }
     }
 }

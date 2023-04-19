@@ -7,9 +7,9 @@ namespace BUS
     {
         DAL_Products products;
 
-        public BUS_Products(string iD, string vendorId, string name, string quantity, string type, string price, string color)
+        public BUS_Products(string iD, string vendorID, string name, string quantity, string type, string price, string color)
         {
-            products = new DAL_Products(iD, vendorId,  name, quantity, type, price, color);
+            products = new DAL_Products(iD, vendorID, name, quantity, type, price, color);
         }
 
         public void addQuery()
@@ -22,7 +22,7 @@ namespace BUS
             return products.selectQuery();
         }
 
-        //Select by vendorID
+        // Select by vendorID
         public DataTable selectVendorId(string id)
         {
             return products.selectVendorId(id);

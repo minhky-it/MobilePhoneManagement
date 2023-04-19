@@ -22,7 +22,7 @@
         }
 
         public string ID1 { get => ID; set => ID = value; }
-        public string _vendorID { get => this.vendorID; set => this.vendorID = value; }
+        public string VendorID { get => vendorID; set => vendorID = value; }
         public string Name { get => name; set => name = value; }
         public string Quantity { get => quantity; set => quantity = value; }
         public string Type { get => type; set => type = value; }

@@ -20,14 +20,22 @@ CREATE TABLE Account(
 	role varchar(50)
 )
 
+CREATE TABLE Vendor(
+	vendorID varchar(50) PRIMARY KEY,
+	vendorName varchar(255),
+	phone varchar(50),
+	email varchar(50),
+)
+
 CREATE TABLE Product(
 	ProductID varchar(50) PRIMARY KEY,
-	vendorID varchar(50) REFERENCES Vendor(vendorID),
+	vendorID varchar(50),
 	name varchar(255),
 	quantity int,
 	type varchar(50),
 	price float,
 	color varchar(50),
+	FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID)
 )
 
 CREATE TABLE WarehouseReceipt(
@@ -84,14 +92,8 @@ CREATE TABLE OrderForm(
 	FOREIGN KEY (staffID) REFERENCES Staff (staffID),
 	FOREIGN KEY (productID) REFERENCES Product (ProductID)
 )
-
-CREATE TABLE Vendor(
-	vendorID varchar(50) PRIMARY KEY,
-	vendorName varchar(255),
-	phone varchar(50),
-	email varchar(50),
-)
 GO
+
 INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn')
 UPDATE Vendor SET vendorName = 'The gioi di dong' WHERE vendorID = 'tgdd';  
 INSERT INTO Product VALUES('P001','tgdd','Iphone 11 64GB',20,'Iphone',6400000,'Black'),

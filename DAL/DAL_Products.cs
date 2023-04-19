@@ -6,14 +6,14 @@ namespace DAL
     public class DAL_Products
     {
         private DTO_Products products;
-        public DAL_Products(string iD, string vendorId, string name, string quantity, string type, string price, string color)
+        public DAL_Products(string iD, string vendorID, string name, string quantity, string type, string price, string color)
         {
-            products = new DTO_Products(iD, vendorId,name, quantity, type, price, color);
+            products = new DTO_Products(iD, vendorID, name, quantity, type, price, color);
         }
 
         public void addQuery()
         {
-            string query = "INSERT INTO Product VALUES ('" + products.ID1 + "','" + products.Name + "'," + products.Quantity + ",'" + products.Type + "'," + products.Price + ",'" + products.Color + "')";
+            string query = "INSERT INTO Product VALUES('" + products.ID1 + "','" + products.VendorID + "','" +  products.Name + "'," + products.Quantity + ",'" + products.Type + "'," + products.Price + ",'" + products.Color + "')";
             Connection.actionQuery(query);
         }
 
@@ -23,7 +23,7 @@ namespace DAL
             return Connection.selectQuery(s);
         }
 
-        //Select by vendorID
+        // Select by vendorID
         public DataTable selectVendorId(string id)
         {
             string sql = string.Format("SELECT * FROM Product WHERE vendorID = '{0}'", id);
