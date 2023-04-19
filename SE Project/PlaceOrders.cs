@@ -31,6 +31,9 @@ namespace SE_Project
 
             //Show the list of vendor
             showVendor();
+
+            //Show Products by Vendor
+            showProducts();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -44,7 +47,6 @@ namespace SE_Project
             DataTable tb = vendor.selectQuery();
             cb_Vendor.DataSource = tb;
             cb_Vendor.DisplayMember = "vendorName";
-            
             cb_Vendor.ValueMember = "vendorID";
         }
        
@@ -53,9 +55,14 @@ namespace SE_Project
             formload();
         }
 
-        private void cb_Vendor_TextChanged(object sender, EventArgs e)
+        private void showProducts()
         {
             string vendorID = cb_Vendor.SelectedValue.ToString();
+            grd_ProductsOfVendor.DataSource = products.selectVendorId(vendorID);
+        }
+        private void cb_Vendor_TextChanged(object sender, EventArgs e)
+        {
+            showProducts();
         }
     }
 }
