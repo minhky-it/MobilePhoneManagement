@@ -5,10 +5,10 @@ namespace DAL
 {
     public class DAL_Products
     {
-        private Products products;
+        private DTO_Products products;
         public DAL_Products(string iD, string name, string quantity, string type, string price, string color)
         {
-            products = new Products(iD, name, quantity, type, price, color);
+            products = new DTO_Products(iD, name, quantity, type, price, color);
         }
 
         public void addQuery()

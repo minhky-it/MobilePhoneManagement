@@ -1,7 +1,6 @@
-﻿
-namespace DTO
+﻿namespace DTO
 {
-    public class Products
+    public class DTO_Products
     {
         private string ID;
         private string name;
@@ -10,9 +9,9 @@ namespace DTO
         private string price;
         private string color;
 
-        public Products(string iD, string name, string quantity, string type, string price, string color)
+        public DTO_Products(string iD, string name, string quantity, string type, string price, string color)
         {
-            ID = iD;
+            this.ID = iD;
             this.name = name;
             this.quantity = quantity;
             this.type = type;
