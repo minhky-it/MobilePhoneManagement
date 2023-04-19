@@ -9,7 +9,7 @@ namespace DAL
 
         public static void connect()
         {
-            string s = "initial catalog = MOBILEMANAGEMENT; data source = DESKTOP-VL7UGOA\\SQLEXPRESS; integrated security = true";
+            string s = "initial catalog = MOBILEMANAGEMENT; data source = MINHKY-PC\\MSSQLSERVER01; integrated security = true";
             cn = new SqlConnection(s);
             cn.Open();
         }

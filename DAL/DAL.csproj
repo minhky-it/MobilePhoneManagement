@@ -44,6 +44,7 @@
     <Compile Include="Connection.cs" />
     <Compile Include="DAL_Products.cs" />
     <Compile Include="DAL_Staff.cs" />
+    <Compile Include="DAL_Vendor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
