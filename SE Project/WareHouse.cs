@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 using BUS;
 
@@ -7,6 +9,8 @@ namespace SE_Project
     public partial class WareHouse : Form
     {
         BUS_Products products;
+        PrintPreviewDialog printPreviewDialog = new  PrintPreviewDialog();
+        PrintDocument printDocument = new PrintDocument();
         public WareHouse()
         {
             InitializeComponent();
@@ -18,8 +22,10 @@ namespace SE_Project
             products = new BUS_Products("","","","","","");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btn_Complete_Click(object sender, EventArgs e)
         {
+            Print(this.panel);
+
             // Add data from DataGridView to MSSQL
             string iD, name, quantity, type, price, color;
             for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
@@ -34,6 +40,30 @@ namespace SE_Project
                 products = new BUS_Products(iD, name, quantity, type, price, color);
                 products.addQuery();
             }
+        }
+
+        public void Print(Panel pnl)
+        {
+            PrinterSettings printerSettings = new PrinterSettings();
+            panel = pnl;
+            getPrintArea(pnl);
+            printPreviewDialog.Document = printDocument;
+            printDocument.PrintPage += new PrintPageEventHandler(printDoc_printPage);
+            printPreviewDialog.ShowDialog();
+        }
+
+        public void printDoc_printPage(object sender, PrintPageEventArgs e)
+        {
+            Rectangle pageArea = e.PageBounds;
+            e.Graphics.DrawImage(memory, (pageArea.Width / 2) - (this.panel.Width / 2), this.panel.Location.Y);
+        }
+
+        Bitmap memory;
+
+        public void getPrintArea(Panel pnl)
+        {
+            memory = new Bitmap(pnl.Width, pnl.Height);
+            pnl.DrawToBitmap(memory, new Rectangle(0, 0, pnl.Width, pnl.Height));
         }
     }
 }
