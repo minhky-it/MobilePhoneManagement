@@ -1,7 +1,7 @@
 ﻿
 namespace SE_Project
 {
-    partial class mainForm
+    partial class WareHouse
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@ namespace SE_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtLocation = new System.Windows.Forms.TextBox();
@@ -217,16 +217,16 @@ namespace SE_Project
             // 
             // Column1
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Gadugi", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column1.HeaderText = "No.";
             this.Column1.Name = "Column1";
             this.Column1.Width = 60;
             // 
             // Column2
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column2.HeaderText = "Name Products";
             this.Column2.Name = "Column2";
             this.Column2.Width = 280;
@@ -395,7 +395,7 @@ namespace SE_Project
             this.txtID.Size = new System.Drawing.Size(78, 26);
             this.txtID.TabIndex = 1;
             // 
-            // mainForm
+            // WareHouse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -419,7 +419,7 @@ namespace SE_Project
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "mainForm";
+            this.Name = "WareHouse";
             this.Text = "Warehouse";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.groupBox1.ResumeLayout(false);

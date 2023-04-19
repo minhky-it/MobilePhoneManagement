@@ -4,10 +4,10 @@ using BUS;
 
 namespace SE_Project
 {
-    public partial class mainForm : Form
+    public partial class WareHouse : Form
     {
         BUS_Products products;
-        public mainForm()
+        public WareHouse()
         {
             InitializeComponent();
         }

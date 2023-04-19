@@ -14,6 +14,7 @@ namespace DAL
             cn.Open();
         }
 
+        //Connect and excuted
         public static void actionQuery(string sql)
         {
             connect();
@@ -22,6 +23,7 @@ namespace DAL
             cmd.ExecuteNonQuery();
         }
 
+        //Query statements
         public static DataTable selectQuery(string sql)
         {
             connect();
