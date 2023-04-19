@@ -19,7 +19,7 @@ namespace SE_Project
         private void mainForm_Load(object sender, EventArgs e)
         {
             txtID.Focus();
-            products = new BUS_Products("","","","","","");
+            products = new BUS_Products("","","","","","","");
         }
 
         private void btn_Complete_Click(object sender, EventArgs e)
@@ -27,17 +27,18 @@ namespace SE_Project
             Print(this.panel);
 
             // Add data from DataGridView to MSSQL
-            string iD, name, quantity, type, price, color;
+            string iD, vendorID, name, quantity, type, price, color;
             for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
             {
                 iD = dataGridView.Rows[i].Cells[0].Value.ToString();
-                name = dataGridView.Rows[i].Cells[1].Value.ToString();
-                quantity = dataGridView.Rows[i].Cells[2].Value.ToString();
-                type = dataGridView.Rows[i].Cells[3].Value.ToString();
-                price = dataGridView.Rows[i].Cells[4].Value.ToString();
-                color = dataGridView.Rows[i].Cells[5].Value.ToString();
+                vendorID = dataGridView.Rows[i].Cells[1].Value.ToString();
+                name = dataGridView.Rows[i].Cells[2].Value.ToString();
+                quantity = dataGridView.Rows[i].Cells[3].Value.ToString();
+                type = dataGridView.Rows[i].Cells[4].Value.ToString();
+                price = dataGridView.Rows[i].Cells[5].Value.ToString();
+                color = dataGridView.Rows[i].Cells[6].Value.ToString();
 
-                products = new BUS_Products(iD, name, quantity, type, price, color);
+                products = new BUS_Products(iD, vendorID, name, quantity, type, price, color);
                 products.addQuery();
             }
         }

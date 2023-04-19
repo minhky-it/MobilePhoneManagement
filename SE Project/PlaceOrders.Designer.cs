@@ -34,37 +34,34 @@ namespace SE_Project
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtBillAdrr = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtPhoneStaff = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmailStaff = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNameStaff = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.grd_ProductsOfVendor = new System.Windows.Forms.DataGridView();
+            this.cb_Vendor = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.openCart = new System.Windows.Forms.Button();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtQuantityItem = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescripItem = new System.Windows.Forms.RichTextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtNameItem = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_ProductsOfVendor)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,9 +93,7 @@ namespace SE_Project
             // 
             this.groupBox3.Controls.Add(this.dateTimePicker1);
             this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.textBox5);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.textBox4);
+            this.groupBox3.Controls.Add(this.txtBillAdrr);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(384, 26);
@@ -110,7 +105,7 @@ namespace SE_Project
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 99);
+            this.dateTimePicker1.Location = new System.Drawing.Point(128, 63);
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(232, 22);
@@ -119,34 +114,18 @@ namespace SE_Project
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 102);
+            this.label7.Location = new System.Drawing.Point(26, 66);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 16);
             this.label7.TabIndex = 6;
             this.label7.Text = "Delivery time:";
             // 
-            // textBox5
+            // txtBillAdrr
             // 
-            this.textBox5.Location = new System.Drawing.Point(128, 63);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(232, 22);
-            this.textBox5.TabIndex = 5;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(26, 66);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 16);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Your address:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(128, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(232, 22);
-            this.textBox4.TabIndex = 4;
+            this.txtBillAdrr.Location = new System.Drawing.Point(128, 26);
+            this.txtBillAdrr.Name = "txtBillAdrr";
+            this.txtBillAdrr.Size = new System.Drawing.Size(232, 22);
+            this.txtBillAdrr.TabIndex = 4;
             // 
             // label5
             // 
@@ -159,11 +138,11 @@ namespace SE_Project
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.txtPhoneStaff);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtEmailStaff);
             this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtNameStaff);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(7, 26);
@@ -173,12 +152,12 @@ namespace SE_Project
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "STAFF";
             // 
-            // textBox3
+            // txtPhoneStaff
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 98);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(255, 22);
-            this.textBox3.TabIndex = 3;
+            this.txtPhoneStaff.Location = new System.Drawing.Point(98, 98);
+            this.txtPhoneStaff.Name = "txtPhoneStaff";
+            this.txtPhoneStaff.Size = new System.Drawing.Size(255, 22);
+            this.txtPhoneStaff.TabIndex = 3;
             // 
             // label4
             // 
@@ -191,12 +170,12 @@ namespace SE_Project
             this.label4.TabIndex = 4;
             this.label4.Text = "Phone:";
             // 
-            // textBox2
+            // txtEmailStaff
             // 
-            this.textBox2.Location = new System.Drawing.Point(98, 62);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(255, 22);
-            this.textBox2.TabIndex = 2;
+            this.txtEmailStaff.Location = new System.Drawing.Point(98, 62);
+            this.txtEmailStaff.Name = "txtEmailStaff";
+            this.txtEmailStaff.Size = new System.Drawing.Size(255, 22);
+            this.txtEmailStaff.TabIndex = 2;
             // 
             // label3
             // 
@@ -207,12 +186,12 @@ namespace SE_Project
             this.label3.TabIndex = 2;
             this.label3.Text = "Email:";
             // 
-            // textBox1
+            // txtNameStaff
             // 
-            this.textBox1.Location = new System.Drawing.Point(98, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(255, 22);
-            this.textBox1.TabIndex = 1;
+            this.txtNameStaff.Location = new System.Drawing.Point(98, 25);
+            this.txtNameStaff.Name = "txtNameStaff";
+            this.txtNameStaff.Size = new System.Drawing.Size(255, 22);
+            this.txtNameStaff.TabIndex = 1;
             // 
             // label2
             // 
@@ -225,8 +204,8 @@ namespace SE_Project
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dataGridView1);
-            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.grd_ProductsOfVendor);
+            this.groupBox4.Controls.Add(this.cb_Vendor);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(13, 211);
@@ -236,25 +215,26 @@ namespace SE_Project
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "The list of products";
             // 
-            // dataGridView1
+            // grd_ProductsOfVendor
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 43);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(970, 255);
-            this.dataGridView1.TabIndex = 17;
+            this.grd_ProductsOfVendor.AllowUserToAddRows = false;
+            this.grd_ProductsOfVendor.AllowUserToDeleteRows = false;
+            this.grd_ProductsOfVendor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grd_ProductsOfVendor.Location = new System.Drawing.Point(7, 43);
+            this.grd_ProductsOfVendor.Name = "grd_ProductsOfVendor";
+            this.grd_ProductsOfVendor.ReadOnly = true;
+            this.grd_ProductsOfVendor.Size = new System.Drawing.Size(970, 255);
+            this.grd_ProductsOfVendor.TabIndex = 17;
             // 
-            // comboBox4
+            // cb_Vendor
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(389, 13);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(308, 24);
-            this.comboBox4.TabIndex = 9;
+            this.cb_Vendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Vendor.FormattingEnabled = true;
+            this.cb_Vendor.Location = new System.Drawing.Point(389, 13);
+            this.cb_Vendor.Name = "cb_Vendor";
+            this.cb_Vendor.Size = new System.Drawing.Size(308, 24);
+            this.cb_Vendor.TabIndex = 9;
+            this.cb_Vendor.TextChanged += new System.EventHandler(this.cb_Vendor_TextChanged);
             // 
             // label11
             // 
@@ -268,14 +248,14 @@ namespace SE_Project
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.button3);
-            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Controls.Add(this.btnCancel);
+            this.groupBox5.Controls.Add(this.btnAdd);
             this.groupBox5.Controls.Add(this.openCart);
-            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.txtQuantityItem);
             this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.richTextBox1);
+            this.groupBox5.Controls.Add(this.txtDescripItem);
             this.groupBox5.Controls.Add(this.label13);
-            this.groupBox5.Controls.Add(this.textBox6);
+            this.groupBox5.Controls.Add(this.txtNameItem);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
             this.groupBox5.Location = new System.Drawing.Point(13, 521);
@@ -285,23 +265,23 @@ namespace SE_Project
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Item information and Features";
             // 
-            // button3
+            // btnCancel
             // 
-            this.button3.Location = new System.Drawing.Point(718, 124);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 38);
-            this.button3.TabIndex = 15;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(718, 124);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(188, 38);
+            this.btnCancel.TabIndex = 15;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAdd
             // 
-            this.button2.Location = new System.Drawing.Point(509, 124);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 38);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Add";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(509, 124);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(188, 38);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // openCart
             // 
@@ -313,13 +293,13 @@ namespace SE_Project
             this.openCart.UseVisualStyleBackColor = true;
             this.openCart.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox7
+            // txtQuantityItem
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(295, 47);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(136, 22);
-            this.textBox7.TabIndex = 11;
+            this.txtQuantityItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuantityItem.Location = new System.Drawing.Point(295, 47);
+            this.txtQuantityItem.Name = "txtQuantityItem";
+            this.txtQuantityItem.Size = new System.Drawing.Size(136, 22);
+            this.txtQuantityItem.TabIndex = 11;
             // 
             // label14
             // 
@@ -331,14 +311,14 @@ namespace SE_Project
             this.label14.TabIndex = 7;
             this.label14.Text = "Quantity";
             // 
-            // richTextBox1
+            // txtDescripItem
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(16, 95);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(415, 67);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "";
+            this.txtDescripItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripItem.Location = new System.Drawing.Point(16, 95);
+            this.txtDescripItem.Name = "txtDescripItem";
+            this.txtDescripItem.Size = new System.Drawing.Size(415, 67);
+            this.txtDescripItem.TabIndex = 12;
+            this.txtDescripItem.Text = "";
             // 
             // label13
             // 
@@ -350,13 +330,13 @@ namespace SE_Project
             this.label13.TabIndex = 4;
             this.label13.Text = "Description";
             // 
-            // textBox6
+            // txtNameItem
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(15, 47);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(256, 22);
-            this.textBox6.TabIndex = 10;
+            this.txtNameItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameItem.Location = new System.Drawing.Point(15, 47);
+            this.txtNameItem.Name = "txtNameItem";
+            this.txtNameItem.Size = new System.Drawing.Size(256, 22);
+            this.txtNameItem.TabIndex = 10;
             // 
             // label12
             // 
@@ -391,7 +371,7 @@ namespace SE_Project
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grd_ProductsOfVendor)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
@@ -404,33 +384,30 @@ namespace SE_Project
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtPhoneStaff;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmailStaff;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNameStaff;
         private System.Windows.Forms.Label label2;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtBillAdrr;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cb_Vendor;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView grd_ProductsOfVendor;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtDescripItem;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtNameItem;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button openCart;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtQuantityItem;
         private System.Windows.Forms.Label label14;
     }
 }

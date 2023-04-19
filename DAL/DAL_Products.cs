@@ -6,9 +6,9 @@ namespace DAL
     public class DAL_Products
     {
         private DTO_Products products;
-        public DAL_Products(string iD, string name, string quantity, string type, string price, string color)
+        public DAL_Products(string iD, string vendorId, string name, string quantity, string type, string price, string color)
         {
-            products = new DTO_Products(iD, name, quantity, type, price, color);
+            products = new DTO_Products(iD, vendorId,name, quantity, type, price, color);
         }
 
         public void addQuery()
@@ -21,6 +21,13 @@ namespace DAL
         {
             string s = "SELECT * FROM Product";
             return Connection.selectQuery(s);
+        }
+
+        //Select by vendorID
+        public DataTable selectVendorId(string id)
+        {
+            string sql = string.Format("SELECT * FROM Product WHERE vendorID = '{0}'", id);
+            return Connection.selectQuery(sql);
         }
     }
 }

@@ -3,15 +3,17 @@
     public class DTO_Products
     {
         private string ID;
+        private string vendorID;
         private string name;
         private string quantity;
         private string type;
         private string price;
         private string color;
 
-        public DTO_Products(string iD, string name, string quantity, string type, string price, string color)
+        public DTO_Products(string iD, string vendorID, string name, string quantity, string type, string price, string color)
         {
             this.ID = iD;
+            this.vendorID = vendorID;
             this.name = name;
             this.quantity = quantity;
             this.type = type;
@@ -20,6 +22,7 @@
         }
 
         public string ID1 { get => ID; set => ID = value; }
+        public string _vendorID { get => this.vendorID; set => this.vendorID = value; }
         public string Name { get => name; set => name = value; }
         public string Quantity { get => quantity; set => quantity = value; }
         public string Type { get => type; set => type = value; }
