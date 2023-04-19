@@ -25,7 +25,7 @@ namespace SE_Project
         }
         private void formload()
         {
-            products = new BUS_Products("", "", "", "", "", "");
+            products = new BUS_Products("", "", "", "", "", "", "");
             vendor = new BUS_Vendor("", "", "", "");
             staff = new BUS_Staff("", "", "", "", "", "");
 
@@ -42,15 +42,20 @@ namespace SE_Project
         {
 
             DataTable tb = vendor.selectQuery();
-
             cb_Vendor.DataSource = tb;
-            cb_Vendor.DisplayMember = "namevendor";
+            cb_Vendor.DisplayMember = "vendorName";
+            
             cb_Vendor.ValueMember = "vendorID";
         }
        
         private void PlaceOrders_Load(object sender, EventArgs e)
         {
             formload();
+        }
+
+        private void cb_Vendor_TextChanged(object sender, EventArgs e)
+        {
+            string vendorID = cb_Vendor.SelectedValue.ToString();
         }
     }
 }

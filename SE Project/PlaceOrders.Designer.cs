@@ -234,6 +234,7 @@ namespace SE_Project
             this.cb_Vendor.Name = "cb_Vendor";
             this.cb_Vendor.Size = new System.Drawing.Size(308, 24);
             this.cb_Vendor.TabIndex = 9;
+            this.cb_Vendor.TextChanged += new System.EventHandler(this.cb_Vendor_TextChanged);
             // 
             // label11
             // 
