@@ -93,14 +93,10 @@ CREATE TABLE OrderForm(
 	FOREIGN KEY (productID) REFERENCES Product (ProductID)
 )
 GO
-<<<<<<< HEAD
 
-INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn')
-UPDATE Vendor SET vendorName = 'The gioi di dong' WHERE vendorID = 'tgdd';  
-=======
 INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn'),
-						 ('cps', 'CellphoneS - Dien thoai di dong', '04242346','cellphones@gmail.com.vn')
->>>>>>> 76343817171920685db4055db055f8f6a34f58c6
+						 ('cps', 'CellphoneS - Dien thoai di dong', '04242346', 'cellphones@gmail.com.vn')
+
 INSERT INTO Product VALUES('P001','tgdd','Iphone 11 64GB',20,'Iphone',6400000,'Black'),
 						  ('P002','tgdd','Iphone 11 64GB Pro Max',15,'Iphone',8400000,'Blue'),
 						  ('P003','tgdd','Iphone 11 128GB',20,'Iphone',9000000,'Black'),

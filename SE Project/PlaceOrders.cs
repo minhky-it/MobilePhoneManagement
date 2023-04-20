@@ -37,13 +37,11 @@ namespace SE_Project
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
             cart = new Cart(po1);
             cart.Show();
         }
         private void showVendor()
         {
-
             DataTable tb = vendor.selectQuery();
             cb_Vendor.DataSource = tb;
             cb_Vendor.DisplayMember = "vendorName";

@@ -29,6 +29,9 @@ namespace SE_Project
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -53,8 +56,6 @@ namespace SE_Project
             this.openCart = new System.Windows.Forms.Button();
             this.txtQuantityItem = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.txtDescripItem = new System.Windows.Forms.RichTextBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.txtNameItem = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -70,7 +71,7 @@ namespace SE_Project
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gadugi", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(392, 10);
+            this.label1.Location = new System.Drawing.Point(281, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(289, 28);
             this.label1.TabIndex = 0;
@@ -84,7 +85,7 @@ namespace SE_Project
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(13, 38);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(983, 167);
+            this.groupBox1.Size = new System.Drawing.Size(840, 182);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "General Information";
@@ -92,29 +93,31 @@ namespace SE_Project
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.cb_Vendor);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.txtBillAdrr);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(384, 26);
+            this.groupBox3.Location = new System.Drawing.Point(406, 29);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(594, 137);
+            this.groupBox3.Size = new System.Drawing.Size(418, 137);
             this.groupBox3.TabIndex = 1;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ORDERS";
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(128, 63);
+            this.dateTimePicker1.Location = new System.Drawing.Point(133, 61);
             this.dateTimePicker1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(232, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(255, 22);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(26, 66);
+            this.label7.Location = new System.Drawing.Point(27, 64);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(89, 16);
             this.label7.TabIndex = 6;
@@ -122,15 +125,15 @@ namespace SE_Project
             // 
             // txtBillAdrr
             // 
-            this.txtBillAdrr.Location = new System.Drawing.Point(128, 26);
+            this.txtBillAdrr.Location = new System.Drawing.Point(133, 24);
             this.txtBillAdrr.Name = "txtBillAdrr";
-            this.txtBillAdrr.Size = new System.Drawing.Size(232, 22);
+            this.txtBillAdrr.Size = new System.Drawing.Size(255, 22);
             this.txtBillAdrr.TabIndex = 4;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(26, 29);
+            this.label5.Location = new System.Drawing.Point(26, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 16);
             this.label5.TabIndex = 2;
@@ -145,16 +148,16 @@ namespace SE_Project
             this.groupBox2.Controls.Add(this.txtNameStaff);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(7, 26);
+            this.groupBox2.Location = new System.Drawing.Point(15, 29);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(369, 137);
+            this.groupBox2.Size = new System.Drawing.Size(385, 137);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "STAFF";
             // 
             // txtPhoneStaff
             // 
-            this.txtPhoneStaff.Location = new System.Drawing.Point(98, 98);
+            this.txtPhoneStaff.Location = new System.Drawing.Point(99, 98);
             this.txtPhoneStaff.Name = "txtPhoneStaff";
             this.txtPhoneStaff.Size = new System.Drawing.Size(255, 22);
             this.txtPhoneStaff.TabIndex = 3;
@@ -164,7 +167,7 @@ namespace SE_Project
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.Location = new System.Drawing.Point(18, 101);
+            this.label4.Location = new System.Drawing.Point(19, 101);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(50, 16);
             this.label4.TabIndex = 4;
@@ -172,7 +175,7 @@ namespace SE_Project
             // 
             // txtEmailStaff
             // 
-            this.txtEmailStaff.Location = new System.Drawing.Point(98, 62);
+            this.txtEmailStaff.Location = new System.Drawing.Point(99, 62);
             this.txtEmailStaff.Name = "txtEmailStaff";
             this.txtEmailStaff.Size = new System.Drawing.Size(255, 22);
             this.txtEmailStaff.TabIndex = 2;
@@ -180,7 +183,7 @@ namespace SE_Project
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 65);
+            this.label3.Location = new System.Drawing.Point(19, 65);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(45, 16);
             this.label3.TabIndex = 2;
@@ -188,7 +191,7 @@ namespace SE_Project
             // 
             // txtNameStaff
             // 
-            this.txtNameStaff.Location = new System.Drawing.Point(98, 25);
+            this.txtNameStaff.Location = new System.Drawing.Point(99, 25);
             this.txtNameStaff.Name = "txtNameStaff";
             this.txtNameStaff.Size = new System.Drawing.Size(255, 22);
             this.txtNameStaff.TabIndex = 1;
@@ -196,7 +199,7 @@ namespace SE_Project
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 28);
+            this.label2.Location = new System.Drawing.Point(19, 28);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(76, 16);
             this.label2.TabIndex = 0;
@@ -205,12 +208,10 @@ namespace SE_Project
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.grd_ProductsOfVendor);
-            this.groupBox4.Controls.Add(this.cb_Vendor);
-            this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.Location = new System.Drawing.Point(13, 211);
+            this.groupBox4.Location = new System.Drawing.Point(13, 226);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(983, 304);
+            this.groupBox4.Size = new System.Drawing.Size(840, 304);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "The list of products";
@@ -219,20 +220,48 @@ namespace SE_Project
             // 
             this.grd_ProductsOfVendor.AllowUserToAddRows = false;
             this.grd_ProductsOfVendor.AllowUserToDeleteRows = false;
+            this.grd_ProductsOfVendor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.grd_ProductsOfVendor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_ProductsOfVendor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grd_ProductsOfVendor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grd_ProductsOfVendor.Location = new System.Drawing.Point(7, 43);
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grd_ProductsOfVendor.DefaultCellStyle = dataGridViewCellStyle5;
+            this.grd_ProductsOfVendor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grd_ProductsOfVendor.Location = new System.Drawing.Point(3, 20);
             this.grd_ProductsOfVendor.Name = "grd_ProductsOfVendor";
             this.grd_ProductsOfVendor.ReadOnly = true;
-            this.grd_ProductsOfVendor.Size = new System.Drawing.Size(970, 255);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Gadugi", 11.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grd_ProductsOfVendor.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.grd_ProductsOfVendor.RowHeadersWidth = 104;
+            this.grd_ProductsOfVendor.Size = new System.Drawing.Size(834, 281);
             this.grd_ProductsOfVendor.TabIndex = 17;
             // 
             // cb_Vendor
             // 
             this.cb_Vendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_Vendor.FormattingEnabled = true;
-            this.cb_Vendor.Location = new System.Drawing.Point(389, 13);
+            this.cb_Vendor.Location = new System.Drawing.Point(133, 98);
             this.cb_Vendor.Name = "cb_Vendor";
-            this.cb_Vendor.Size = new System.Drawing.Size(308, 24);
+            this.cb_Vendor.Size = new System.Drawing.Size(255, 24);
             this.cb_Vendor.TabIndex = 9;
             this.cb_Vendor.TextChanged += new System.EventHandler(this.cb_Vendor_TextChanged);
             // 
@@ -240,11 +269,11 @@ namespace SE_Project
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(281, 16);
+            this.label11.Location = new System.Drawing.Point(27, 101);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(102, 16);
+            this.label11.Size = new System.Drawing.Size(105, 16);
             this.label11.TabIndex = 15;
-            this.label11.Text = "Select a vendor";
+            this.label11.Text = "Select a vendor:";
             // 
             // groupBox5
             // 
@@ -253,41 +282,39 @@ namespace SE_Project
             this.groupBox5.Controls.Add(this.openCart);
             this.groupBox5.Controls.Add(this.txtQuantityItem);
             this.groupBox5.Controls.Add(this.label14);
-            this.groupBox5.Controls.Add(this.txtDescripItem);
-            this.groupBox5.Controls.Add(this.label13);
             this.groupBox5.Controls.Add(this.txtNameItem);
             this.groupBox5.Controls.Add(this.label12);
             this.groupBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox5.Location = new System.Drawing.Point(13, 521);
+            this.groupBox5.Location = new System.Drawing.Point(12, 537);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(983, 169);
+            this.groupBox5.Size = new System.Drawing.Size(840, 132);
             this.groupBox5.TabIndex = 3;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Item information and Features";
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(718, 124);
+            this.btnCancel.Location = new System.Drawing.Point(427, 81);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(188, 38);
+            this.btnCancel.Size = new System.Drawing.Size(149, 38);
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(509, 124);
+            this.btnAdd.Location = new System.Drawing.Point(262, 81);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(188, 38);
+            this.btnAdd.Size = new System.Drawing.Size(149, 38);
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
             // 
             // openCart
             // 
-            this.openCart.Location = new System.Drawing.Point(868, 23);
+            this.openCart.Location = new System.Drawing.Point(733, 14);
             this.openCart.Name = "openCart";
-            this.openCart.Size = new System.Drawing.Size(97, 35);
+            this.openCart.Size = new System.Drawing.Size(101, 35);
             this.openCart.TabIndex = 14;
             this.openCart.Text = "Cart";
             this.openCart.UseVisualStyleBackColor = true;
@@ -296,63 +323,45 @@ namespace SE_Project
             // txtQuantityItem
             // 
             this.txtQuantityItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantityItem.Location = new System.Drawing.Point(295, 47);
+            this.txtQuantityItem.Location = new System.Drawing.Point(106, 62);
             this.txtQuantityItem.Name = "txtQuantityItem";
-            this.txtQuantityItem.Size = new System.Drawing.Size(136, 22);
+            this.txtQuantityItem.Size = new System.Drawing.Size(79, 22);
             this.txtQuantityItem.TabIndex = 11;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(292, 26);
+            this.label14.Location = new System.Drawing.Point(14, 65);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 16);
+            this.label14.Size = new System.Drawing.Size(59, 16);
             this.label14.TabIndex = 7;
-            this.label14.Text = "Quantity";
-            // 
-            // txtDescripItem
-            // 
-            this.txtDescripItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripItem.Location = new System.Drawing.Point(16, 95);
-            this.txtDescripItem.Name = "txtDescripItem";
-            this.txtDescripItem.Size = new System.Drawing.Size(415, 67);
-            this.txtDescripItem.TabIndex = 12;
-            this.txtDescripItem.Text = "";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(13, 74);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(76, 16);
-            this.label13.TabIndex = 4;
-            this.label13.Text = "Description";
+            this.label14.Text = "Quantity:";
             // 
             // txtNameItem
             // 
+            this.txtNameItem.BackColor = System.Drawing.SystemColors.Window;
             this.txtNameItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNameItem.Location = new System.Drawing.Point(15, 47);
+            this.txtNameItem.Location = new System.Drawing.Point(106, 26);
             this.txtNameItem.Name = "txtNameItem";
-            this.txtNameItem.Size = new System.Drawing.Size(256, 22);
+            this.txtNameItem.Size = new System.Drawing.Size(216, 22);
             this.txtNameItem.TabIndex = 10;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(13, 26);
+            this.label12.Location = new System.Drawing.Point(13, 29);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(87, 16);
+            this.label12.Size = new System.Drawing.Size(90, 16);
             this.label12.TabIndex = 2;
-            this.label12.Text = "Name of item";
+            this.label12.Text = "Name of item:";
             // 
             // PlaceOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 697);
+            this.ClientSize = new System.Drawing.Size(865, 678);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox1);
@@ -370,7 +379,6 @@ namespace SE_Project
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grd_ProductsOfVendor)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
@@ -400,8 +408,6 @@ namespace SE_Project
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridView grd_ProductsOfVendor;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.RichTextBox txtDescripItem;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtNameItem;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnCancel;
