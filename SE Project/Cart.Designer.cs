@@ -172,6 +172,7 @@ namespace SE_Project
             this.btnDel.TabIndex = 0;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // button5
             // 

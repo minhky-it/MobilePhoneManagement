@@ -73,5 +73,10 @@ namespace SE_Project
                 orderform.addQuery();
             }
         }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            grd_Cart.Rows.RemoveAt(grd_Cart.CurrentRow.Index);
+        }
     }
 }

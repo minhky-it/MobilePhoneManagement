@@ -38,6 +38,8 @@ namespace SE_Project
             txtPhoneStaff.Text = "01234567";
             txtEmailStaff.Text = "minhky.book@gmail.com";
 
+            txtNameItem.ReadOnly = true;
+            cb_Vendor.Focus();
 
             //Show the list of vendor
             showVendor();
@@ -93,27 +95,48 @@ namespace SE_Project
         {
             showProducts();
         }
-
+        private bool checkInfo()
+        {
+            string quantity = txtQuantityItem.Text;
+            if (!int.TryParse(quantity, out int value) || quantity == "")
+            {
+                MessageBox.Show("Please enter an integer!", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtQuantityItem.Focus();
+                return false;
+            }
+            string address = txtBillAdrr.Text;
+            address = address.Replace("  ", " ");
+            if(address == "")
+            {
+                MessageBox.Show("Please enter the address!", "Warnning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtBillAdrr.Focus();
+                return false;
+            }
+            return true;
+        }
         //Add product to cart
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //grd_ProductsOfVendor.CurrentRow.Cells[0].Value.ToString();
+            if (checkInfo())
+            {
+                DataRow dr = cartTable.NewRow();
 
-            
+                dr[0] = grd_ProductsOfVendor.CurrentRow.Cells[0].Value.ToString();
+                dr[1] = grd_ProductsOfVendor.CurrentRow.Cells[1].Value.ToString();
+                dr[2] = grd_ProductsOfVendor.CurrentRow.Cells[2].Value.ToString();
+                dr[3] = txtQuantityItem.Text;
+                dr[4] = grd_ProductsOfVendor.CurrentRow.Cells[4].Value.ToString();
+                dr[5] = grd_ProductsOfVendor.CurrentRow.Cells[5].Value.ToString();
+                dr[6] = grd_ProductsOfVendor.CurrentRow.Cells[6].Value.ToString();
 
-            DataRow dr = cartTable.NewRow();
-
-            dr[0] = grd_ProductsOfVendor.CurrentRow.Cells[0].Value.ToString();
-            dr[1] = grd_ProductsOfVendor.CurrentRow.Cells[1].Value.ToString();
-            dr[2] = grd_ProductsOfVendor.CurrentRow.Cells[2].Value.ToString();
-            dr[3] = txtQuantityItem.Text;
-            dr[4] = grd_ProductsOfVendor.CurrentRow.Cells[4].Value.ToString();
-            dr[5] = grd_ProductsOfVendor.CurrentRow.Cells[5].Value.ToString();
-            dr[6] = grd_ProductsOfVendor.CurrentRow.Cells[6].Value.ToString();
-
-            cartTable.Rows.Add(dr);//this will add the row at the end of the datatable
-            po._data = cartTable;
-            MessageBox.Show("Adding success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                cartTable.Rows.Add(dr);//this will add the row at the end of the datatable
+                po._data = cartTable;
+                MessageBox.Show("Adding success", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                txtQuantityItem.Text = "";
+            }
         }
 
         //Edit the quantity
