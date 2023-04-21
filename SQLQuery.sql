@@ -73,13 +73,15 @@ CREATE TABLE OrderForm(
 	vendorID varchar(50),
 	staffID varchar(50),
 	productID varchar(50),
-	addrress varchar(50),
+	address varchar(50),
 	deliveryDate Date,
+	quantity int
 	FOREIGN KEY (vendorID) REFERENCES Vendor (vendorID),
 	FOREIGN KEY (staffID) REFERENCES Staff (staffID),
 	FOREIGN KEY (productID) REFERENCES Product (productID),
 	CONSTRAINT PK_OrderForm PRIMARY KEY (orderID, vendorID, staffID, productID)
 )
+
 GO
 
 INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn'),
@@ -108,4 +110,32 @@ INSERT INTO Product VALUES('P001','tgdd','Iphone 11 64GB',20,'Iphone',6400000,'B
 						  ('P021','tgdd','Iphone 14 512GB',20,'Iphone',28500000,'Black'),
 						  ('P022','tgdd','Iphone 14 512GB Pro Max',15,'Iphone',29100000,'Blue'),
 						  ('P023','tgdd','Iphone 14 1TB',15,'Iphone',32000000,'Black')
+INSERT INTO Product VALUES('P0024','cps','Iphone 11 64GB',20,'Iphone',6400000,'Black'),
+						  ('P0025','cps','Iphone 11 64GB Pro Max',15,'Iphone',8400000,'Blue'),
+						  ('P0026','cps','Iphone 11 128GB',20,'Iphone',9000000,'Black'),
+						  ('P0027','cps','Iphone 11 128GB Pro Max',15,'Iphone',10000000,'Yellow'),
+						  ('P0028','cps','Iphone 11 256GB',20,'Iphone',11300000,'Blue'),
+						  ('P0029','cps','Iphone 11 256GB Pro Max',15,'Iphone',12400000,'Purple'),
+						  ('P0030','cps','Iphone 12 128GB',20,'Iphone',15000000,'Yellow'),
+						  ('P0031','cps','Iphone 12 128GB Pro Max',15,'Iphone',16400000,'Purple'),
+						  ('P0032','cps','Iphone 12 256GB',20,'Iphone',17000000,'Blue'),
+						  ('P0033','cps','Iphone 12 256GB Pro Max',15,'Iphone',18700000,'Yellow'),
+						  ('P0046','cps','Iphone 13 128GB',20,'Iphone',20000000,'Purple'),
+						  ('P0034','cps','Iphone 13 128GB Pro Max',15,'Iphone',21300000,''),
+						  ('P0035','cps','Iphone 13 256GB',20,'Iphone',22000000,'Yellow'),
+						  ('P0036','cps','Iphone 13 256GB Pro Max',15,'Iphone',23800000,'Blue'),
+						  ('P0037','cps','Iphone 13 512GB',20,'Iphone',25500000,'Black'),
+						  ('P0038','cps','Iphone 13 512GB Pro Max',15,'Iphone',26000000,'Red'),
+						  ('P0039','cps','Iphone 14 128GB',20,'Iphone',24000000,'Purple'),
+						  ('P0040','cps','Iphone 14 128GB Pro Max',15,'Iphone',25600000,'Yellow'),
+						  ('P0041','cps','Iphone 14 256GB',20,'Iphone',26500000,'Purple'),
+						  ('P0042','cps','Iphone 14 256GB Pro Max',15,'Iphone',27600000,'Red'),
+						  ('P043','cps','Iphone 14 512GB',20,'Iphone',28500000,'Black'),
+						  ('P044','cps','Iphone 14 512GB Pro Max',15,'Iphone',29100000,'Blue'),
+						  ('P045','cps','Iphone 14 1TB',15,'Iphone',32000000,'Black')
 GO
+INSERT INTO  Staff VALUES('daily001', 'Distributor Distric 7', 'dis@tdtu.com', '012345', '793 Tran Xuan Soan','distributor')
+INSERT INTO  Staff VALUES('daily001-0001', 'Nguyen Minh Ky', 'minhky@daily001.tdtu.com', '012345', '793 Tran Xuan Soan','staff')
+SELECT * FROM OrderForm
+
+SELECT * FROM Staff WHERE staffID = 'daily001'
