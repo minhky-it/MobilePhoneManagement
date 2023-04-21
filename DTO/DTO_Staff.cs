@@ -11,6 +11,15 @@ namespace DTO
         private string id, fullname, email, phone, address, role;
 
         //Constructor
+        public DTO_Staff()
+        {
+            this.id = "";
+            this.fullname = "";
+            this.email = "";
+            this.phone = "";
+            this.address = "";
+            this.role = "";
+        }
         public DTO_Staff(string id, string fullname, string email, string phone, string address, string role)
         {
             this.id = id;

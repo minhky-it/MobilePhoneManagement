@@ -49,12 +49,13 @@ namespace SE_Project
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            if(btnEdit.Text != "Save")
+            if (btnEdit.Text != "Save")
             {
                 txtQuantity.ReadOnly = false;
                 txtQuantity.Focus();
                 btnEdit.Text = "Save";
-            }else
+            }
+            else
             {
                 grd_Cart.Rows[selectedRow].Cells[2].Value = txtQuantity.Text;
                 btnEdit.Text = "Edit Quantity";
@@ -65,12 +66,23 @@ namespace SE_Project
 
         private void btnPurchase_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in grd_Cart.Rows)
+            try
             {
-                po._vendorId = row.Cells[1].Value.ToString();
-                po._productId = row.Cells[0].Value.ToString();
-                orderform = new BUS_OrderForm(po._id, po._vendorId, po._staffId, po._productId, po._address, po._deliverytime);
-                orderform.addQuery();
+                foreach (DataGridViewRow row in grd_Cart.Rows)
+                {
+                
+                    po._vendorId = row.Cells[1].Value.ToString();
+                    po._productId = row.Cells[0].Value.ToString();
+                    po._quantity = int.Parse(row.Cells[3].Value.ToString());
+                    orderform = new BUS_OrderForm(po._id, po._vendorId, po._staffId, po._productId, po._address, po._deliverytime, po._quantity);
+                    orderform.addQuery();    
+                }
+                MessageBox.Show("Success! Request is finished", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

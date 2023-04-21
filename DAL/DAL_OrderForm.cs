@@ -11,14 +11,14 @@ namespace DAL
     {
         private DTO_OrderForm orderform;
 
-        public DAL_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery)
+        public DAL_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery, int quantity)
         {
-            orderform = new DTO_OrderForm(id, vendorId, staffId, productId, address, delivery);
+            orderform = new DTO_OrderForm(id, vendorId, staffId, productId, address, delivery, quantity);
         }
         public void addQuery()
         {
-            string sql = String.Format("INSERT INTO OrderForm VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')",
-            orderform._id, orderform._vendorId, orderform._staffId, orderform._productId, orderform._address, orderform._delivery
+            string sql = String.Format("INSERT INTO OrderForm VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}','{6}')",
+            orderform._id, orderform._vendorId, orderform._staffId, orderform._productId, orderform._address, orderform._delivery, orderform._quantity
             );
             Connection.actionQuery(sql);
         }

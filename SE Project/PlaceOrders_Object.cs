@@ -9,8 +9,9 @@ namespace SE_Project
     public class PlaceOrders_Object
     {
         private string id, staffId, vendorId, productId, address, deliveryTime, payment;
+        private int quantity;
         private DataTable listProduct;
-        public PlaceOrders_Object(string id, string staffId, string vendorId, string productId, string add, string time, string payment)
+        public PlaceOrders_Object(string id, string staffId, string vendorId, string productId, string add, string time, string payment, int quantity)
         {
             this.id = id;
             this.staffId = staffId;
@@ -19,6 +20,7 @@ namespace SE_Project
             this.address = add;
             this.deliveryTime = time;
             this.payment = payment;
+            this.quantity = quantity;
         }
 
         public string _id
@@ -60,6 +62,11 @@ namespace SE_Project
         {
             get { return listProduct; }
             set { listProduct = value; }
+        }
+        public int _quantity
+        {
+            get { return this.quantity; }
+            set { this.quantity = value; }
         }
     }
 }

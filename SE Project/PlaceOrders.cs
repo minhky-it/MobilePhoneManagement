@@ -13,11 +13,12 @@ namespace SE_Project
     public partial class PlaceOrders : Form
     {
         private Cart cart;
-        PlaceOrders_Object po = new PlaceOrders_Object("", "","", "", "", "", "");
+        PlaceOrders_Object po = new PlaceOrders_Object("", "","", "", "", "", "", 0);
 
         private BUS_Products products;
         private BUS_Vendor vendor;
         private BUS_Staff staff;
+        private BUS_Staff distributor = new BUS_Staff();
         private DataTable cartTable = new DataTable("Cart");
 
         public PlaceOrders()
@@ -29,7 +30,7 @@ namespace SE_Project
         {
             products = new BUS_Products("", "", "", "", "", "", "");
             vendor = new BUS_Vendor("", "", "", "");
-            staff = new BUS_Staff("", "", "", "", "", "");
+            staff = new BUS_Staff();
 
             txtEmailStaff.ReadOnly = true;
             txtPhoneStaff.ReadOnly = true;
@@ -39,6 +40,7 @@ namespace SE_Project
             txtEmailStaff.Text = "minhky.book@gmail.com";
 
             txtNameItem.ReadOnly = true;
+            txtBillAdrr.ReadOnly = true;
             cb_Vendor.Focus();
 
             //Show the list of vendor
@@ -57,12 +59,16 @@ namespace SE_Project
             cartTable.Columns.Add("Type", typeof(String));
             cartTable.Columns.Add("Price", typeof(String));
             cartTable.Columns.Add("Color", typeof(String));
+
+            //Show address of distributor
+            showDistributor();
+            //Show staff info
+            showStaff();
         }
         //Open Cart
         private void button1_Click(object sender, EventArgs e)
         {
             po._id = "34e2asda";
-            po._staffId = "xacasd2";
             po._vendorId = cb_Vendor.SelectedValue.ToString();
             po._address = txtBillAdrr.Text;
             po._deliverytime = deliveryDate.Value.ToString("MM/dd/yyyy");
@@ -76,6 +82,22 @@ namespace SE_Project
             cb_Vendor.DataSource = tb;
             cb_Vendor.DisplayMember = "vendorName";
             cb_Vendor.ValueMember = "vendorID";
+            
+        }
+        private void showStaff()
+        {
+            DataTable tb = staff.selectQuerybyID("daily001-0001");
+            DataRow row = tb.Rows[0];
+            txtNameStaff.Text = row["fullname"].ToString();
+            txtEmailStaff.Text = row["email"].ToString();
+            txtPhoneStaff.Text = row["phone"].ToString();
+        }
+        private void showDistributor()
+        {
+            DataTable tb = distributor.selectQuerybyID("daily001");
+            DataRow row = tb.Rows[0];
+            txtBillAdrr.Text = row["address"].ToString();
+            po._staffId = row["staffID"].ToString();
         }
        
         private void PlaceOrders_Load(object sender, EventArgs e)

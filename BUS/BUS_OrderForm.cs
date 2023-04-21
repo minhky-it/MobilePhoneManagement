@@ -7,9 +7,9 @@ namespace BUS
     {
         private DAL_OrderForm orderform;
 
-        public BUS_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery)
+        public BUS_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery, int quantity)
         {
-            orderform = new DAL_OrderForm(id, vendorId, staffId, productId, address, delivery);
+            orderform = new DAL_OrderForm(id, vendorId, staffId, productId, address, delivery, quantity);
         }
         public void addQuery()
         {

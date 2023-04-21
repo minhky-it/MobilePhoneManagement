@@ -9,7 +9,8 @@ namespace DTO
     public class DTO_OrderForm
     {
         private string id, vendorId, staffId, productId, address, deliveryDate;
-        public DTO_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery)
+        private int quantity;
+        public DTO_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery, int quantity)
         {
             this.id = id;
             this.vendorId = vendorId;
@@ -17,6 +18,7 @@ namespace DTO
             this.productId = productId;
             this.address = address;
             this.deliveryDate = delivery;
+            this.quantity = quantity;
         }
 
         public string _id
@@ -49,6 +51,11 @@ namespace DTO
         {
             get { return this.deliveryDate; }
             set { this.deliveryDate = value; }
+        }
+        public int _quantity
+        {
+            get { return this.quantity; }
+            set { this.quantity = value; }
         }
     }
 }
