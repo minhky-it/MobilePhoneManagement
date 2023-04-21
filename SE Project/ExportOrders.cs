@@ -16,5 +16,10 @@ namespace SE_Project
         {
             InitializeComponent();
         }
+
+        private void ExportOrders_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
