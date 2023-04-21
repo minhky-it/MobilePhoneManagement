@@ -11,6 +11,7 @@ CREATE TABLE Staff(
 	address varchar(255),
 	role varchar(100)
 )
+
 CREATE TABLE Account(
 	accountID varchar(50) PRIMARY KEY,
 	status varchar(50),
@@ -35,20 +36,6 @@ CREATE TABLE Product(
 	price float,
 	color varchar(50),
 	FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID)
-)
-
-CREATE TABLE WarehouseReceipt(
-	receiptID varchar(50) PRIMARY KEY,
-	nameDeliver varchar(50),
-	circular varchar(100),
-	inputDate Date,
-	inputStock varchar(255),
-	location varchar(255),
-	productID varchar(50),
-	staffID varchar(50),
-	total float,
-	FOREIGN KEY (productID) REFERENCES Product (ProductID),
-	FOREIGN KEY (staffID) REFERENCES Staff (staffID)
 )
 
 CREATE TABLE Customer(
@@ -94,6 +81,7 @@ CREATE TABLE OrderForm(
 	CONSTRAINT PK_OrderForm PRIMARY KEY (orderID, vendorID, staffID, productID)
 )
 GO
+
 INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn'),
 						 ('cps', 'CellphoneS - Dien thoai di dong', '04242346', 'cellphones@gmail.com.vn')
 INSERT INTO Staff VALUES('xacasd2', 'Tran Gia Thieu', 'giathieu@tdtu.com', '1341234', 'asdafeqweq', 'waiter')
