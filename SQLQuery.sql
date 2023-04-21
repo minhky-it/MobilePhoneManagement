@@ -11,7 +11,6 @@ CREATE TABLE Staff(
 	address varchar(255),
 	role varchar(100)
 )
-
 CREATE TABLE Account(
 	accountID varchar(50) PRIMARY KEY,
 	status varchar(50),
@@ -83,20 +82,21 @@ CREATE TABLE DetailReceipt(
 )
 
 CREATE TABLE OrderForm(
-	orderID varchar(50) PRIMARY KEY,
+	orderID varchar(50),
 	vendorID varchar(50),
 	staffID varchar(50),
 	productID varchar(50),
-	city varchar(50),
+	addrress varchar(50),
 	deliveryDate Date,
+	FOREIGN KEY (vendorID) REFERENCES Vendor (vendorID),
 	FOREIGN KEY (staffID) REFERENCES Staff (staffID),
-	FOREIGN KEY (productID) REFERENCES Product (ProductID)
+	FOREIGN KEY (productID) REFERENCES Product (productID),
+	CONSTRAINT PK_OrderForm PRIMARY KEY (orderID, vendorID, staffID, productID)
 )
 GO
-
 INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn'),
 						 ('cps', 'CellphoneS - Dien thoai di dong', '04242346', 'cellphones@gmail.com.vn')
-
+INSERT INTO Staff VALUES('xacasd2', 'Tran Gia Thieu', 'giathieu@tdtu.com', '1341234', 'asdafeqweq', 'waiter')
 INSERT INTO Product VALUES('P001','tgdd','Iphone 11 64GB',20,'Iphone',6400000,'Black'),
 						  ('P002','tgdd','Iphone 11 64GB Pro Max',15,'Iphone',8400000,'Blue'),
 						  ('P003','tgdd','Iphone 11 128GB',20,'Iphone',9000000,'Black'),

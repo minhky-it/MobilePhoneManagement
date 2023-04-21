@@ -29,13 +29,12 @@ namespace SE_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.deliveryDate = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cb_Vendor = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtBillAdrr = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,8 +47,6 @@ namespace SE_Project
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.grd_ProductsOfVendor = new System.Windows.Forms.DataGridView();
-            this.cb_Vendor = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -92,7 +89,7 @@ namespace SE_Project
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.deliveryDate);
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.cb_Vendor);
             this.groupBox3.Controls.Add(this.label7);
@@ -106,13 +103,33 @@ namespace SE_Project
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ORDERS";
             // 
-            // dateTimePicker1
+            // deliveryDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(133, 61);
-            this.dateTimePicker1.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(255, 22);
-            this.dateTimePicker1.TabIndex = 6;
+            this.deliveryDate.Location = new System.Drawing.Point(133, 61);
+            this.deliveryDate.MinDate = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
+            this.deliveryDate.Name = "deliveryDate";
+            this.deliveryDate.Size = new System.Drawing.Size(255, 22);
+            this.deliveryDate.TabIndex = 6;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(27, 101);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(105, 16);
+            this.label11.TabIndex = 15;
+            this.label11.Text = "Select a vendor:";
+            // 
+            // cb_Vendor
+            // 
+            this.cb_Vendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_Vendor.FormattingEnabled = true;
+            this.cb_Vendor.Location = new System.Drawing.Point(133, 98);
+            this.cb_Vendor.Name = "cb_Vendor";
+            this.cb_Vendor.Size = new System.Drawing.Size(255, 24);
+            this.cb_Vendor.TabIndex = 9;
+            this.cb_Vendor.TextChanged += new System.EventHandler(this.cb_Vendor_TextChanged);
             // 
             // label7
             // 
@@ -222,58 +239,15 @@ namespace SE_Project
             this.grd_ProductsOfVendor.AllowUserToDeleteRows = false;
             this.grd_ProductsOfVendor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.grd_ProductsOfVendor.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_ProductsOfVendor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.grd_ProductsOfVendor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Gadugi", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grd_ProductsOfVendor.DefaultCellStyle = dataGridViewCellStyle5;
             this.grd_ProductsOfVendor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grd_ProductsOfVendor.Location = new System.Drawing.Point(3, 20);
             this.grd_ProductsOfVendor.Name = "grd_ProductsOfVendor";
             this.grd_ProductsOfVendor.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Gadugi", 11.25F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grd_ProductsOfVendor.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.grd_ProductsOfVendor.RowHeadersWidth = 104;
             this.grd_ProductsOfVendor.Size = new System.Drawing.Size(834, 281);
             this.grd_ProductsOfVendor.TabIndex = 17;
-            // 
-            // cb_Vendor
-            // 
-            this.cb_Vendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cb_Vendor.FormattingEnabled = true;
-            this.cb_Vendor.Location = new System.Drawing.Point(133, 98);
-            this.cb_Vendor.Name = "cb_Vendor";
-            this.cb_Vendor.Size = new System.Drawing.Size(255, 24);
-            this.cb_Vendor.TabIndex = 9;
-            this.cb_Vendor.TextChanged += new System.EventHandler(this.cb_Vendor_TextChanged);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(27, 101);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(105, 16);
-            this.label11.TabIndex = 15;
-            this.label11.Text = "Select a vendor:";
+            this.grd_ProductsOfVendor.Click += new System.EventHandler(this.grd_ProductsOfVendor_Click);
             // 
             // groupBox5
             // 
@@ -309,6 +283,7 @@ namespace SE_Project
             this.btnAdd.TabIndex = 13;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // openCart
             // 
@@ -344,6 +319,7 @@ namespace SE_Project
             this.txtNameItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNameItem.Location = new System.Drawing.Point(106, 26);
             this.txtNameItem.Name = "txtNameItem";
+            this.txtNameItem.ReadOnly = true;
             this.txtNameItem.Size = new System.Drawing.Size(216, 22);
             this.txtNameItem.TabIndex = 10;
             // 
@@ -399,7 +375,7 @@ namespace SE_Project
         private System.Windows.Forms.TextBox txtNameStaff;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker deliveryDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtBillAdrr;
         private System.Windows.Forms.Label label5;
