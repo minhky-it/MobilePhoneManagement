@@ -70,11 +70,8 @@ namespace SE_Project
             {
                 foreach (DataGridViewRow row in grd_Cart.Rows)
                 {
-                
-                    po._vendorId = row.Cells[1].Value.ToString();
-                    po._productId = row.Cells[0].Value.ToString();
-                    po._quantity = int.Parse(row.Cells[3].Value.ToString());
-                    orderform = new BUS_OrderForm(po._id, po._vendorId, po._staffId, po._productId, po._address, po._deliverytime, po._quantity);
+                    // orderform = new BUS_OrderForm(po._id, po._address, po._statusPayment, po._status, po._deliverytime);
+                    
                     orderform.addQuery();    
                 }
                 MessageBox.Show("Success! Request is finished", "Notification", MessageBoxButtons.OK, MessageBoxIcon.Information);

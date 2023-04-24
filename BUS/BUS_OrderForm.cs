@@ -6,10 +6,12 @@ namespace BUS
     public class BUS_OrderForm
     {
         private DAL_OrderForm orderform;
-
-        public BUS_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery, int quantity)
+        public BUS_OrderForm() {
+            orderform = new DAL_OrderForm("","","","","");
+        }
+        public BUS_OrderForm(string id, string address, string statusPayment, string status, string delivery)
         {
-            orderform = new DAL_OrderForm(id, vendorId, staffId, productId, address, delivery, quantity);
+            orderform = new DAL_OrderForm(id, address, statusPayment, status, delivery);
         }
         public void addQuery()
         {

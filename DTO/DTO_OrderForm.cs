@@ -8,17 +8,14 @@ namespace DTO
 {
     public class DTO_OrderForm
     {
-        private string id, vendorId, staffId, productId, address, deliveryDate;
-        private int quantity;
-        public DTO_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery, int quantity)
+        private string id, address, statusPayment, status, deliveryDate;
+        public DTO_OrderForm(string id, string address, string statusPayment, string status, string delivery)
         {
             this.id = id;
-            this.vendorId = vendorId;
-            this.staffId = staffId;
-            this.productId = productId;
             this.address = address;
+            this.statusPayment = statusPayment;
+            this.status = status;
             this.deliveryDate = delivery;
-            this.quantity = quantity;
         }
 
         public string _id
@@ -26,21 +23,7 @@ namespace DTO
             get { return this.id; }
             set { this.id = value; }
         }
-        public string _vendorId
-        {
-            get { return this.vendorId; }
-            set { this.vendorId = value; }
-        }
-        public string _staffId
-        {
-            get { return this.staffId; }
-            set { this.staffId = value; }
-        }
-        public string _productId
-        {
-            get { return this.productId; }
-            set { this.productId = value; }
-        }
+      
         public string _address
         {
             get { return this.address; }
@@ -52,10 +35,16 @@ namespace DTO
             get { return this.deliveryDate; }
             set { this.deliveryDate = value; }
         }
-        public int _quantity
+        public string _statusPayment
         {
-            get { return this.quantity; }
-            set { this.quantity = value; }
+            get { return this.statusPayment; }
+            set { this.statusPayment = value; }
+        }
+
+        public string _status
+        {
+            get { return this.status; }
+            set { this.status = value; }
         }
     }
 }
