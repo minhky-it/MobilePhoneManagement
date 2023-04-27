@@ -29,12 +29,12 @@ namespace SE_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,24 +56,24 @@ namespace SE_Project
             this.label1 = new System.Windows.Forms.Label();
             this.txtReason = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtOrderStatus = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtStockName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.txtOrderID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.panel = new System.Windows.Forms.Panel();
+            this.btn_Print = new System.Windows.Forms.Button();
+            this.btn_Complete = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.label01 = new System.Windows.Forms.Label();
-            this.txtStockName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtLocation = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txtOrderStatus = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btn_Print = new System.Windows.Forms.Button();
-            this.btn_Complete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -82,38 +82,38 @@ namespace SE_Project
             // 
             // Column5
             // 
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Gadugi", 9.75F);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Gadugi", 9.75F);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column5.HeaderText = "Price";
             this.Column5.Name = "Column5";
             // 
             // Column4
             // 
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Gadugi", 9.75F);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 9.75F);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column4.HeaderText = "Type";
             this.Column4.Name = "Column4";
             // 
             // Column3
             // 
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column3.HeaderText = "Quantity";
             this.Column3.Name = "Column3";
             this.Column3.Width = 80;
             // 
             // Column2
             // 
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column2.HeaderText = "Name Products";
             this.Column2.Name = "Column2";
             this.Column2.Width = 260;
             // 
             // Column1
             // 
-            dataGridViewCellStyle41.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column1.HeaderText = "No.";
             this.Column1.Name = "Column1";
             this.Column1.Width = 60;
@@ -137,8 +137,8 @@ namespace SE_Project
             // 
             // Column6
             // 
-            dataGridViewCellStyle42.Font = new System.Drawing.Font("Gadugi", 9.75F);
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Gadugi", 9.75F);
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column6.HeaderText = "Color";
             this.Column6.Name = "Column6";
             // 
@@ -278,6 +278,60 @@ namespace SE_Project
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Commodity information";
             // 
+            // txtOrderStatus
+            // 
+            this.txtOrderStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtOrderStatus.Location = new System.Drawing.Point(472, 32);
+            this.txtOrderStatus.Name = "txtOrderStatus";
+            this.txtOrderStatus.Size = new System.Drawing.Size(259, 26);
+            this.txtOrderStatus.TabIndex = 4;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(331, 36);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(93, 20);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Order status:";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLocation.Location = new System.Drawing.Point(140, 107);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(170, 26);
+            this.txtLocation.TabIndex = 7;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(15, 110);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 20);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "Location:";
+            // 
+            // txtStockName
+            // 
+            this.txtStockName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtStockName.Location = new System.Drawing.Point(140, 69);
+            this.txtStockName.Name = "txtStockName";
+            this.txtStockName.Size = new System.Drawing.Size(170, 26);
+            this.txtStockName.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 20);
+            this.label3.TabIndex = 10;
+            this.label3.Text = "Export in Stock:";
+            // 
             // txtOrderID
             // 
             this.txtOrderID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -355,6 +409,26 @@ namespace SE_Project
             this.panel.Size = new System.Drawing.Size(784, 656);
             this.panel.TabIndex = 1;
             // 
+            // btn_Print
+            // 
+            this.btn_Print.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Print.Location = new System.Drawing.Point(600, 601);
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(130, 35);
+            this.btn_Print.TabIndex = 13;
+            this.btn_Print.Text = "Print";
+            this.btn_Print.UseVisualStyleBackColor = true;
+            // 
+            // btn_Complete
+            // 
+            this.btn_Complete.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Complete.Location = new System.Drawing.Point(460, 601);
+            this.btn_Complete.Name = "btn_Complete";
+            this.btn_Complete.Size = new System.Drawing.Size(130, 35);
+            this.btn_Complete.TabIndex = 12;
+            this.btn_Complete.Text = "Confirm";
+            this.btn_Complete.UseVisualStyleBackColor = true;
+            // 
             // txtID
             // 
             this.txtID.Font = new System.Drawing.Font("Times New Roman", 12F);
@@ -390,80 +464,6 @@ namespace SE_Project
             this.label01.Size = new System.Drawing.Size(30, 20);
             this.label01.TabIndex = 32;
             this.label01.Text = "No.";
-            // 
-            // txtStockName
-            // 
-            this.txtStockName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockName.Location = new System.Drawing.Point(140, 69);
-            this.txtStockName.Name = "txtStockName";
-            this.txtStockName.Size = new System.Drawing.Size(170, 26);
-            this.txtStockName.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 72);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Export in Stock:";
-            // 
-            // txtLocation
-            // 
-            this.txtLocation.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtLocation.Location = new System.Drawing.Point(140, 107);
-            this.txtLocation.Name = "txtLocation";
-            this.txtLocation.Size = new System.Drawing.Size(170, 26);
-            this.txtLocation.TabIndex = 7;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(15, 110);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 20);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "Location:";
-            // 
-            // txtOrderStatus
-            // 
-            this.txtOrderStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderStatus.Location = new System.Drawing.Point(472, 32);
-            this.txtOrderStatus.Name = "txtOrderStatus";
-            this.txtOrderStatus.Size = new System.Drawing.Size(259, 26);
-            this.txtOrderStatus.TabIndex = 4;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(331, 36);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(93, 20);
-            this.label12.TabIndex = 14;
-            this.label12.Text = "Order status:";
-            // 
-            // btn_Print
-            // 
-            this.btn_Print.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Print.Location = new System.Drawing.Point(600, 601);
-            this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(130, 35);
-            this.btn_Print.TabIndex = 13;
-            this.btn_Print.Text = "Print";
-            this.btn_Print.UseVisualStyleBackColor = true;
-            // 
-            // btn_Complete
-            // 
-            this.btn_Complete.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Complete.Location = new System.Drawing.Point(460, 601);
-            this.btn_Complete.Name = "btn_Complete";
-            this.btn_Complete.Size = new System.Drawing.Size(130, 35);
-            this.btn_Complete.TabIndex = 12;
-            this.btn_Complete.Text = "Confirm";
-            this.btn_Complete.UseVisualStyleBackColor = true;
             // 
             // ExportOrders
             // 

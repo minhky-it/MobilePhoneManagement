@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MOBILEMANAGEMENTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MOBILEMANAGEMENT.dbo.Account' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Account">
+          <Property Name="accountID" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="role" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MOBILEMANAGEMENT.dbo.Bill' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Bill">
+          <Property Name="billID" Type="varchar" MaxLength="50" />
+          <Property Name="customerID" Type="varchar" MaxLength="50" />
+          <Property Name="productID" Type="varchar" MaxLength="50" />
+          <Property Name="total" Type="float" />
+          <Property Name="outDate" Type="date" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MOBILEMANAGEMENT.dbo.Customer' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="Customer">
+          <Property Name="customerID" Type="varchar" MaxLength="50" />
+          <Property Name="fullname" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="phone" Type="varchar" MaxLength="255" />
+          <Property Name="accountID" Type="varchar" MaxLength="50" />
+          <Property Name="paymentInfo" Type="varchar" MaxLength="255" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MOBILEMANAGEMENT.dbo.DetailReceipt' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="DetailReceipt">
+          <Property Name="billID" Type="varchar" MaxLength="50" />
+          <Property Name="staffID" Type="varchar" MaxLength="50" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="total" Type="float" />
+        </EntityType>-->
+        <EntityType Name="OrderForm">
+          <Key>
+            <PropertyRef Name="orderID" />
+            <PropertyRef Name="vendorID" />
+            <PropertyRef Name="staffID" />
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="orderID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vendorID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="staffID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="productID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="address" Type="varchar" MaxLength="50" />
+          <Property Name="deliveryDate" Type="date" />
+          <Property Name="quantity" Type="int" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vendorID" Type="varchar" MaxLength="50" />
+          <Property Name="name" Type="varchar" MaxLength="255" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="price" Type="float" />
+          <Property Name="color" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="staffID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fullname" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="phone" Type="varchar" MaxLength="40" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="role" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="vendorID" />
+          </Key>
+          <Property Name="vendorID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="vendorName" Type="varchar" MaxLength="255" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'MOBILEMANAGEMENT.dbo.WarehouseReceipt' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="WarehouseReceipt">
+          <Property Name="receiptID" Type="varchar" MaxLength="50" />
+          <Property Name="nameDeliver" Type="varchar" MaxLength="50" />
+          <Property Name="inputDate" Type="date" />
+          <Property Name="location" Type="varchar" MaxLength="255" />
+          <Property Name="inputStock" Type="varchar" MaxLength="255" />
+          <Property Name="productID" Type="varchar" MaxLength="50" />
+          <Property Name="staffID" Type="varchar" MaxLength="50" />
+          <Property Name="total" Type="float" />
+        </EntityType>-->
+        <Association Name="FK__OrderForm__produ__6B24EA82">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="OrderForm" Type="Self.OrderForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderForm">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderForm__quant__693CA210">
+          <End Role="Vendor" Type="Self.Vendor" Multiplicity="1" />
+          <End Role="OrderForm" Type="Self.OrderForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendor">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="OrderForm">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderForm__staff__6A30C649">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="OrderForm" Type="Self.OrderForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staffID" />
+            </Principal>
+            <Dependent Role="OrderForm">
+              <PropertyRef Name="staffID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__vendorI__3B75D760">
+          <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendor">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MOBILEMANAGEMENTModelStoreContainer">
+          <EntitySet Name="OrderForm" EntityType="Self.OrderForm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__OrderForm__produ__6B24EA82" Association="Self.FK__OrderForm__produ__6B24EA82">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderForm" EntitySet="OrderForm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderForm__quant__693CA210" Association="Self.FK__OrderForm__quant__693CA210">
+            <End Role="Vendor" EntitySet="Vendor" />
+            <End Role="OrderForm" EntitySet="OrderForm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderForm__staff__6A30C649" Association="Self.FK__OrderForm__staff__6A30C649">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="OrderForm" EntitySet="OrderForm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__vendorI__3B75D760" Association="Self.FK__Product__vendorI__3B75D760">
+            <End Role="Vendor" EntitySet="Vendor" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MOBILEMANAGEMENTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="OrderForm">
+          <Key>
+            <PropertyRef Name="orderID" />
+            <PropertyRef Name="vendorID" />
+            <PropertyRef Name="staffID" />
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="orderID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vendorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="staffID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="productID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="deliveryDate" Type="DateTime" Precision="0" />
+          <Property Name="quantity" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__OrderForm__produ__6B24EA82" FromRole="OrderForm" ToRole="Product" />
+          <NavigationProperty Name="Vendor" Relationship="Self.FK__OrderForm__quant__693CA210" FromRole="OrderForm" ToRole="Vendor" />
+          <NavigationProperty Name="Staff" Relationship="Self.FK__OrderForm__staff__6A30C649" FromRole="OrderForm" ToRole="Staff" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vendorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="price" Type="Double" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrderForm" Relationship="Self.FK__OrderForm__produ__6B24EA82" FromRole="Product" ToRole="OrderForm" />
+          <NavigationProperty Name="Vendor" Relationship="Self.FK__Product__vendorI__3B75D760" FromRole="Product" ToRole="Vendor" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="staffID" />
+          </Key>
+          <Property Name="staffID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrderForm" Relationship="Self.FK__OrderForm__staff__6A30C649" FromRole="Staff" ToRole="OrderForm" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="vendorID" />
+          </Key>
+          <Property Name="vendorID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="vendorName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="OrderForm" Relationship="Self.FK__OrderForm__quant__693CA210" FromRole="Vendor" ToRole="OrderForm" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Product__vendorI__3B75D760" FromRole="Vendor" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK__OrderForm__produ__6B24EA82">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="OrderForm" Type="Self.OrderForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="OrderForm">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderForm__quant__693CA210">
+          <End Role="Vendor" Type="Self.Vendor" Multiplicity="1" />
+          <End Role="OrderForm" Type="Self.OrderForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendor">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="OrderForm">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OrderForm__staff__6A30C649">
+          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+          <End Role="OrderForm" Type="Self.OrderForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Staff">
+              <PropertyRef Name="staffID" />
+            </Principal>
+            <Dependent Role="OrderForm">
+              <PropertyRef Name="staffID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Product__vendorI__3B75D760">
+          <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendor">
+              <PropertyRef Name="vendorID" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="vendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="MOBILEMANAGEMENTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="OrderForm" EntityType="Self.OrderForm" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" />
+          <EntitySet Name="Vendor" EntityType="Self.Vendor" />
+          <AssociationSet Name="FK__OrderForm__produ__6B24EA82" Association="Self.FK__OrderForm__produ__6B24EA82">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="OrderForm" EntitySet="OrderForm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderForm__quant__693CA210" Association="Self.FK__OrderForm__quant__693CA210">
+            <End Role="Vendor" EntitySet="Vendor" />
+            <End Role="OrderForm" EntitySet="OrderForm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OrderForm__staff__6A30C649" Association="Self.FK__OrderForm__staff__6A30C649">
+            <End Role="Staff" EntitySet="Staff" />
+            <End Role="OrderForm" EntitySet="OrderForm" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Product__vendorI__3B75D760" Association="Self.FK__Product__vendorI__3B75D760">
+            <End Role="Vendor" EntitySet="Vendor" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MOBILEMANAGEMENTModelStoreContainer" CdmEntityContainer="MOBILEMANAGEMENTEntities">
+          <EntitySetMapping Name="OrderForm">
+            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.OrderForm">
+              <MappingFragment StoreEntitySet="OrderForm">
+                <ScalarProperty Name="orderID" ColumnName="orderID" />
+                <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+                <ScalarProperty Name="staffID" ColumnName="staffID" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="deliveryDate" ColumnName="deliveryDate" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="color" ColumnName="color" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Staff">
+            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="staffID" ColumnName="staffID" />
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="role" ColumnName="role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendor">
+            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.Vendor">
+              <MappingFragment StoreEntitySet="Vendor">
+                <ScalarProperty Name="vendorID" ColumnName="vendorID" />
+                <ScalarProperty Name="vendorName" ColumnName="vendorName" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
