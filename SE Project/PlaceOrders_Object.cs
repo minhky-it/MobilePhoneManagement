@@ -8,18 +8,33 @@ namespace SE_Project
 {
     public class PlaceOrders_Object
     {
+        // new table
+        private string statusPayment, status;
+
+        // old table
         private string id, staffId, vendorId, productId, address, deliveryTime, payment;
         private int quantity;
         private DataTable listProduct;
-        public PlaceOrders_Object(string id, string staffId, string vendorId, string productId, string add, string time, string payment, int quantity)
+
+        public PlaceOrders_Object(){ }
+
+        // Order form
+        public PlaceOrders_Object(string id, string address, string statusPayment, string status, string deliver)
         {
             this.id = id;
-            this.staffId = staffId;
+            this.address = address;
+            this.statusPayment = statusPayment;
+            this.status = status;
+            this.deliveryTime = deliver;
+        }
+
+        // Detail Order Form
+        public PlaceOrders_Object(string id, string vendorId, string staffId, string productId, int quantity)
+        {
+            this.id = id;
             this.vendorId = vendorId;
+            this.staffId = staffId;
             this.productId = productId;
-            this.address = add;
-            this.deliveryTime = time;
-            this.payment = payment;
             this.quantity = quantity;
         }
 
@@ -53,11 +68,7 @@ namespace SE_Project
             get { return this.deliveryTime; }
             set { this.deliveryTime = value; }
         }
-        public string _payment
-        {
-            get { return this.payment; }
-            set { this.payment = value; }
-        }
+       
         public DataTable _data
         {
             get { return listProduct; }
@@ -67,6 +78,19 @@ namespace SE_Project
         {
             get { return this.quantity; }
             set { this.quantity = value; }
+        }
+
+        // new table
+        public string _statusPayment
+        {
+            get { return this.statusPayment; }
+            set { this.statusPayment = value; }
+        }
+
+        public string _status
+        {
+            get { return this.status; }
+            set { this.status = value; }
         }
     }
 }

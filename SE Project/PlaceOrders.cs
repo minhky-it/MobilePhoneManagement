@@ -13,7 +13,7 @@ namespace SE_Project
     public partial class PlaceOrders : Form
     {
         private Cart cart;
-        PlaceOrders_Object po = new PlaceOrders_Object("", "","", "", "", "", "", 0);
+        PlaceOrders_Object po = new PlaceOrders_Object();
 
         private BUS_Products products;
         private BUS_Vendor vendor;
@@ -105,14 +105,14 @@ namespace SE_Project
             formload();
         }
 
-        //Show product
+        // Show product
         private void showProducts()
         {
             string vendorID = cb_Vendor.SelectedValue.ToString();
             grd_ProductsOfVendor.DataSource = products.selectVendorId(vendorID);
         }
 
-        //Select vendor
+        // Select vendor
         private void cb_Vendor_TextChanged(object sender, EventArgs e)
         {
             showProducts();

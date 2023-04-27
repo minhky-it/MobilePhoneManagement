@@ -11,22 +11,22 @@ namespace DAL
     {
         private DTO_OrderForm orderform;
 
-        public DAL_OrderForm(string id, string vendorId, string staffId, string productId, string address, string delivery, int quantity)
+        public DAL_OrderForm(string id, string address, string statusPayment, string status, string delivery)
         {
-            orderform = new DTO_OrderForm(id, vendorId, staffId, productId, address, delivery, quantity);
+            orderform = new DTO_OrderForm(id, address, statusPayment, status, delivery);
         }
         public void addQuery()
         {
-            string sql = String.Format("INSERT INTO OrderForm VALUES('{0}', '{1}', '{2}', '{3}', '{4}', '{5}','{6}')",
-            orderform._id, orderform._vendorId, orderform._staffId, orderform._productId, orderform._address, orderform._delivery, orderform._quantity
-            );
+            string sql = String.Format("INSERT INTO OrderForm VALUES('{0}', '{1}', '{2}', '{3}', '{4}')",
+            orderform._id, orderform._address, orderform._statusPayment, orderform._status, orderform._delivery);
             Connection.actionQuery(sql);
         }
 
         public DataTable selectQuery()
         {
-            string s = "SELECT * FROM Product";
+            string s = "SELECT * FROM OrderForm";
             return Connection.selectQuery(s);
         }
+
     }
 }

@@ -29,5 +29,12 @@ namespace DAL
             string sql = string.Format("SELECT * FROM Product WHERE vendorID = '{0}'", id);
             return Connection.selectQuery(sql);
         }
+
+        // Select by OrderID
+        public DataTable selectOrderId(string id)
+        {
+            string sql = string.Format("SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = '{0}'", id);
+            return Connection.selectQuery(sql);
+        }
     }
 }

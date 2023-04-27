@@ -69,24 +69,35 @@ CREATE TABLE DetailReceipt(
 )
 
 CREATE TABLE OrderForm(
+	orderID varchar(50) PRIMARY KEY,
+	addrress varchar(50),
+	statusPayment varchar(20),
+	status varchar(20),
+	deliveryDate Date
+)
+
+CREATE TABLE DetailOrderForm (
 	orderID varchar(50),
 	vendorID varchar(50),
 	staffID varchar(50),
 	productID varchar(50),
-	address varchar(50),
-	deliveryDate Date,
-	quantity int
+	quantity int,
+	PRIMARY KEY (orderID, vendorID, productID),
 	FOREIGN KEY (vendorID) REFERENCES Vendor (vendorID),
 	FOREIGN KEY (staffID) REFERENCES Staff (staffID),
-	FOREIGN KEY (productID) REFERENCES Product (productID),
-	CONSTRAINT PK_OrderForm PRIMARY KEY (orderID, vendorID, staffID, productID)
+	FOREIGN KEY (productID) REFERENCES Product (productID)
 )
-
 GO
+
+INSERT INTO OrderForm VALUES ('O001','Quan7','Da thanh toan','Da order','02-23-2023'),
+							('O002','Quan4','Da thanh toan','Da order','02-20-2023'),
+							('O003','Quan8','Da thanh toan','Da order','02-21-2023');
 
 INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn'),
 						 ('cps', 'CellphoneS - Dien thoai di dong', '04242346', 'cellphones@gmail.com.vn')
+
 INSERT INTO Staff VALUES('xacasd2', 'Tran Gia Thieu', 'giathieu@tdtu.com', '1341234', 'asdafeqweq', 'waiter')
+
 INSERT INTO Product VALUES('P001','tgdd','Iphone 11 64GB',20,'Iphone',6400000,'Black'),
 						  ('P002','tgdd','Iphone 11 64GB Pro Max',15,'Iphone',8400000,'Blue'),
 						  ('P003','tgdd','Iphone 11 128GB',20,'Iphone',9000000,'Black'),
@@ -110,6 +121,7 @@ INSERT INTO Product VALUES('P001','tgdd','Iphone 11 64GB',20,'Iphone',6400000,'B
 						  ('P021','tgdd','Iphone 14 512GB',20,'Iphone',28500000,'Black'),
 						  ('P022','tgdd','Iphone 14 512GB Pro Max',15,'Iphone',29100000,'Blue'),
 						  ('P023','tgdd','Iphone 14 1TB',15,'Iphone',32000000,'Black')
+
 INSERT INTO Product VALUES('P0024','cps','Iphone 11 64GB',20,'Iphone',6400000,'Black'),
 						  ('P0025','cps','Iphone 11 64GB Pro Max',15,'Iphone',8400000,'Blue'),
 						  ('P0026','cps','Iphone 11 128GB',20,'Iphone',9000000,'Black'),
@@ -133,9 +145,12 @@ INSERT INTO Product VALUES('P0024','cps','Iphone 11 64GB',20,'Iphone',6400000,'B
 						  ('P043','cps','Iphone 14 512GB',20,'Iphone',28500000,'Black'),
 						  ('P044','cps','Iphone 14 512GB Pro Max',15,'Iphone',29100000,'Blue'),
 						  ('P045','cps','Iphone 14 1TB',15,'Iphone',32000000,'Black')
-GO
-INSERT INTO  Staff VALUES('daily001', 'Distributor Distric 7', 'dis@tdtu.com', '012345', '793 Tran Xuan Soan','distributor')
-INSERT INTO  Staff VALUES('daily001-0001', 'Nguyen Minh Ky', 'minhky@daily001.tdtu.com', '012345', '793 Tran Xuan Soan','staff')
-SELECT * FROM OrderForm
 
-SELECT * FROM Staff WHERE staffID = 'daily001'
+INSERT INTO DetailOrderForm VALUES ('O001','tgdd','xacasd2','P001',20),
+								   ('O001','tgdd','xacasd2','P002',20),
+								   ('O001','tgdd','xacasd2','P003',20)
+GO
+
+--SELECT * FROM OrderForm
+--SELECT * FROM DetailOrderForm WHERE orderID = 'O001'
+--SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'
