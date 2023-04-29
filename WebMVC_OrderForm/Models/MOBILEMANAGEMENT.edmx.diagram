@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67fd669608f042d1a0c879b5fbdec58b" Name="Diagram1">
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.Account" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.Bill" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.Customer" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.DetailOrderForm" Width="1.5" PointX="5.25" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.DetailReceipt" Width="1.5" PointX="7.5" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.OrderForm" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.Product" Width="1.5" PointX="3" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.Staff" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.Vendor" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__Customer__accoun__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__Bill__customerID__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__Bill__productID__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__DetailRec__billI__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__DetailOrd__produ__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__DetailOrd__staff__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__DetailOrd__vendo__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__DetailRec__staff__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__Product__vendorI__2A4B4B5E" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.CART" Width="1.5" PointX="5.25" PointY="11.625" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__CART__CustomerID__49C3F6B7" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__CART__productID__4AB81AF0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

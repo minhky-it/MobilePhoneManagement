@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BUS", "BUS\BUS.csproj", "{8A55D40F-EC98-4E18-BF71-2340B5CF2336}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMobilePhoneCustomer", "WebMobilePhoneCustomer\WebMobilePhoneCustomer.csproj", "{85E22EC7-EEC2-4233-B6BE-827E53065D86}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebMVC_OrderForm", "WebMVC_OrderForm\WebMVC_OrderForm.csproj", "{631BF608-A30C-4D05-9A34-8E2CEFA05E23}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{8A55D40F-EC98-4E18-BF71-2340B5CF2336}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A55D40F-EC98-4E18-BF71-2340B5CF2336}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A55D40F-EC98-4E18-BF71-2340B5CF2336}.Release|Any CPU.Build.0 = Release|Any CPU
-		{85E22EC7-EEC2-4233-B6BE-827E53065D86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{85E22EC7-EEC2-4233-B6BE-827E53065D86}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{85E22EC7-EEC2-4233-B6BE-827E53065D86}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{85E22EC7-EEC2-4233-B6BE-827E53065D86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{631BF608-A30C-4D05-9A34-8E2CEFA05E23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{631BF608-A30C-4D05-9A34-8E2CEFA05E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{631BF608-A30C-4D05-9A34-8E2CEFA05E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{631BF608-A30C-4D05-9A34-8E2CEFA05E23}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

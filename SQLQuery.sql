@@ -76,6 +76,15 @@ CREATE TABLE OrderForm(
 	deliveryDate Date
 )
 
+CREATE TABLE CART(
+	CustomerID varchar(50),
+	productID varchar(50),
+	Total int,
+	PRIMARY KEY (CustomerID, productID),
+	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
+	FOREIGN KEY (productID) REFERENCES Product (productID)
+)
+
 CREATE TABLE DetailOrderForm (
 	orderID varchar(50),
 	vendorID varchar(50),

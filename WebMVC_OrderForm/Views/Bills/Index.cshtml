@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebMVC_OrderForm.Models.Bill>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3><strong>Order Iphone Online</strong></h3>
+
+<p>
+    @Html.ActionLink("New Order", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Product.vendorID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.outDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.outDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Customer.fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Product.vendorID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.billID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.billID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.billID })
+        </td>
+    </tr>
+}
+
+</table>
