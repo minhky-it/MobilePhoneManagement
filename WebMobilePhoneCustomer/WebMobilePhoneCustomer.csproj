@@ -145,36 +145,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\OrderFormsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MobilePhoneManagement.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MobilePhoneManagement.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MobilePhoneManagement.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MobilePhoneManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\MobilePhoneManagement.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MobilePhoneManagement.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\OrderForm.cs">
-      <DependentUpon>MobilePhoneManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>MobilePhoneManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Staff.cs">
-      <DependentUpon>MobilePhoneManagement.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Vendor.cs">
-      <DependentUpon>MobilePhoneManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -187,29 +159,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\MobilePhoneManagement.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MobilePhoneManagement.edmx</DependentUpon>
-      <LastGenOutput>MobilePhoneManagement.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\MobilePhoneManagement.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MobilePhoneManagement.edmx</DependentUpon>
-      <LastGenOutput>MobilePhoneManagement.cs</LastGenOutput>
-    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Dockerfile" />
     <None Include=".dockerignore">
       <DependentUpon>Dockerfile</DependentUpon>
     </None>
-    <EntityDeploy Include="Models\MobilePhoneManagement.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MobilePhoneManagement.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\MobilePhoneManagement.edmx.diagram">
-      <DependentUpon>MobilePhoneManagement.edmx</DependentUpon>
-    </Content>
     <None Include="Properties\PublishProfiles\IISProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -236,14 +191,10 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\OrderForms\Create.cshtml" />
-    <Content Include="Views\OrderForms\Delete.cshtml" />
-    <Content Include="Views\OrderForms\Details.cshtml" />
-    <Content Include="Views\OrderForms\Edit.cshtml" />
-    <Content Include="Views\OrderForms\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -279,7 +230,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>50959</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44314/</IISUrl>
+          <IISUrl>http://localhost:50959/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
