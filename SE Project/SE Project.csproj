@@ -55,12 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cart.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Cart.Designer.cs">
-      <DependentUpon>Cart.cs</DependentUpon>
-    </Compile>
     <Compile Include="ExportOrders.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,13 +73,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="PlaceOrders.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PlaceOrders.Designer.cs">
-      <DependentUpon>PlaceOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PlaceOrders_Object.cs" />
     <Compile Include="Report.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,17 +87,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cart.resx">
-      <DependentUpon>Cart.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ExportOrders.resx">
       <DependentUpon>ExportOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="PlaceOrders.resx">
-      <DependentUpon>PlaceOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WareHouse.resx">
       <DependentUpon>WareHouse.cs</DependentUpon>

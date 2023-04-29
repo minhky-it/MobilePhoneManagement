@@ -13,7 +13,6 @@ namespace SE_Project
     public partial class MainForm : Form
     {
         private Report rp;
-        private PlaceOrders po;
         private ExportOrders eo;
         private WareHouse wh; 
         public MainForm()
@@ -23,9 +22,7 @@ namespace SE_Project
 
         private void button1_Click(object sender, EventArgs e)
         {
-            po = new PlaceOrders();
-            po.Show();
-        }
+         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {

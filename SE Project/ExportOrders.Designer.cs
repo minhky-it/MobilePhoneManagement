@@ -46,7 +46,6 @@ namespace SE_Project
             this.label1 = new System.Windows.Forms.Label();
             this.txtReason = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtOrderID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -64,43 +63,14 @@ namespace SE_Project
             this.SuspendLayout();
             // 
             // Column5
-            // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Gadugi", 9.75F);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column5.HeaderText = "Price";
-            this.Column5.Name = "Column5";
-            // 
-            // Column4
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 9.75F);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column4.HeaderText = "Type";
-            this.Column4.Name = "Column4";
-            // 
+
+
             // Column3
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column3.HeaderText = "Quantity";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 80;
-            // 
+
             // Column2
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Column2.HeaderText = "Name Products";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 260;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Gadugi", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Column1.HeaderText = "No.";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 60;
-            // 
+            // Column1 
             // dataGridView
             // 
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
@@ -126,13 +96,6 @@ namespace SE_Project
             this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView.Size = new System.Drawing.Size(737, 231);
             this.dataGridView.TabIndex = 9;
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Gadugi", 9.75F);
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Column6.HeaderText = "Color";
-            this.Column6.Name = "Column6";
             // 
             // label8
             // 
@@ -270,11 +233,6 @@ namespace SE_Project
             // 
             // txtOrderStatus
             // 
-            this.txtOrderStatus.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtOrderStatus.Location = new System.Drawing.Point(472, 32);
-            this.txtOrderStatus.Name = "txtOrderStatus";
-            this.txtOrderStatus.Size = new System.Drawing.Size(259, 26);
-            this.txtOrderStatus.TabIndex = 4;
             // 
             // label12
             // 

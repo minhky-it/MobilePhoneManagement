@@ -1427,6 +1427,7 @@ ol ol {
   padding-left: 0;
   list-style: none;
 }
+.float-right{float:right;}
 .list-inline {
   padding-left: 0;
   list-style: none;
