@@ -12,29 +12,18 @@
     <h4>CART</h4>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Total)
-        </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Total)
+            @Html.DisplayFor(model => model.price)
         </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Customer.fullname)
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Customer.fullname)
-        </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.Product.vendorID)
+            @Html.DisplayNameFor(model => model.Product.ProductID)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Product.vendorID)
-        </dd>
 
     </dl>
 

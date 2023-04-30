@@ -16,7 +16,8 @@ namespace WebMVC_OrderForm.Models
     {
         public string CustomerID { get; set; }
         public string productID { get; set; }
-        public Nullable<int> Total { get; set; }
+        public Nullable<int> quantity { get; set; }
+        public Nullable<int> price { get; set; }
     
         public virtual Customer Customer { get; set; }
         public virtual Product Product { get; set; }

@@ -32,7 +32,8 @@
           </Key>
           <Property Name="CustomerID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="productID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Total" Type="int" />
+          <Property Name="quantity" Type="int" />
+          <Property Name="price" Type="int" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -133,7 +134,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CART__CustomerID__3E52440B">
+        <Association Name="FK__CART__CustomerID__45F365D3">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="CART" Type="Self.CART" Multiplicity="*" />
           <ReferentialConstraint>
@@ -145,7 +146,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CART__productID__3F466844">
+        <Association Name="FK__CART__productID__46E78A0C">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="CART" Type="Self.CART" Multiplicity="*" />
           <ReferentialConstraint>
@@ -260,11 +261,11 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__CART__CustomerID__3E52440B" Association="Self.FK__CART__CustomerID__3E52440B">
+          <AssociationSet Name="FK__CART__CustomerID__45F365D3" Association="Self.FK__CART__CustomerID__45F365D3">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="CART" EntitySet="CART" />
           </AssociationSet>
-          <AssociationSet Name="FK__CART__productID__3F466844" Association="Self.FK__CART__productID__3F466844">
+          <AssociationSet Name="FK__CART__productID__46E78A0C" Association="Self.FK__CART__productID__46E78A0C">
             <End Role="Product" EntitySet="Product" />
             <End Role="CART" EntitySet="CART" />
           </AssociationSet>
@@ -337,7 +338,7 @@
           <Property Name="paymentInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK__Customer__accoun__2D27B809" FromRole="Customer" ToRole="Account" />
           <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__customerID__300424B4" FromRole="Customer" ToRole="Bill" />
-          <NavigationProperty Name="CARTs" Relationship="MOBILEMANAGEMENTModel.FK__CART__CustomerID__49C3F6B7" FromRole="Customer" ToRole="CART" />
+          <NavigationProperty Name="CARTs" Relationship="MOBILEMANAGEMENTModel.FK__CART__CustomerID__45F365D3" FromRole="Customer" ToRole="CART" />
         </EntityType>
         <EntityType Name="DetailOrderForm">
           <Key>
@@ -390,7 +391,7 @@
           <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__productID__30F848ED" FromRole="Product" ToRole="Bill" />
           <NavigationProperty Name="DetailOrderForms" Relationship="Self.FK__DetailOrd__produ__3B75D760" FromRole="Product" ToRole="DetailOrderForm" />
           <NavigationProperty Name="Vendor" Relationship="Self.FK__Product__vendorI__2A4B4B5E" FromRole="Product" ToRole="Vendor" />
-          <NavigationProperty Name="CARTs" Relationship="MOBILEMANAGEMENTModel.FK__CART__productID__4AB81AF0" FromRole="Product" ToRole="CART" />
+          <NavigationProperty Name="CARTs" Relationship="MOBILEMANAGEMENTModel.FK__CART__productID__46E78A0C" FromRole="Product" ToRole="CART" />
         </EntityType>
         <EntityType Name="Staff">
           <Key>
@@ -571,15 +572,15 @@
             <End Role="Product" EntitySet="Products" />
           </AssociationSet>
           <EntitySet Name="CARTs" EntityType="MOBILEMANAGEMENTModel.CART" />
-          <AssociationSet Name="FK__CART__CustomerID__49C3F6B7" Association="MOBILEMANAGEMENTModel.FK__CART__CustomerID__49C3F6B7">
+          <AssociationSet Name="FK__CART__CustomerID__45F365D3" Association="MOBILEMANAGEMENTModel.FK__CART__CustomerID__45F365D3">
             <End Role="Customer" EntitySet="Customers" />
             <End Role="CART" EntitySet="CARTs" />
           </AssociationSet>
-          <AssociationSet Name="FK__CART__productID__4AB81AF0" Association="MOBILEMANAGEMENTModel.FK__CART__productID__4AB81AF0">
+          <AssociationSet Name="FK__CART__productID__46E78A0C" Association="MOBILEMANAGEMENTModel.FK__CART__productID__46E78A0C">
             <End Role="Product" EntitySet="Products" />
             <End Role="CART" EntitySet="CARTs" />
           </AssociationSet>
-        </EntityContainer>
+          </EntityContainer>
         <EntityType Name="CART">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -587,11 +588,12 @@
           </Key>
           <Property Name="CustomerID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="productID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Total" Type="Int32" />
-          <NavigationProperty Name="Customer" Relationship="MOBILEMANAGEMENTModel.FK__CART__CustomerID__49C3F6B7" FromRole="CART" ToRole="Customer" />
-          <NavigationProperty Name="Product" Relationship="MOBILEMANAGEMENTModel.FK__CART__productID__4AB81AF0" FromRole="CART" ToRole="Product" />
+          <Property Name="quantity" Type="Int32" />
+          <Property Name="price" Type="Int32" />
+          <NavigationProperty Name="Customer" Relationship="MOBILEMANAGEMENTModel.FK__CART__CustomerID__45F365D3" FromRole="CART" ToRole="Customer" />
+          <NavigationProperty Name="Product" Relationship="MOBILEMANAGEMENTModel.FK__CART__productID__46E78A0C" FromRole="CART" ToRole="Product" />
         </EntityType>
-        <Association Name="FK__CART__CustomerID__49C3F6B7">
+        <Association Name="FK__CART__CustomerID__45F365D3">
           <End Type="MOBILEMANAGEMENTModel.Customer" Role="Customer" Multiplicity="1" />
           <End Type="MOBILEMANAGEMENTModel.CART" Role="CART" Multiplicity="*" />
           <ReferentialConstraint>
@@ -603,7 +605,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CART__productID__4AB81AF0">
+        <Association Name="FK__CART__productID__46E78A0C">
           <End Type="MOBILEMANAGEMENTModel.Product" Role="Product" Multiplicity="1" />
           <End Type="MOBILEMANAGEMENTModel.CART" Role="CART" Multiplicity="*" />
           <ReferentialConstraint>
@@ -615,7 +617,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -725,7 +727,8 @@
           <EntitySetMapping Name="CARTs">
             <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.CART">
               <MappingFragment StoreEntitySet="CART">
-                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
               </MappingFragment>

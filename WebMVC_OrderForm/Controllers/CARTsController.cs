@@ -22,13 +22,13 @@ namespace WebMVC_OrderForm.Controllers
         }
 
         // GET: CARTs/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string cusID, string productID)
         {
-            if (id == null)
+            if (cusID == null || productID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CART cART = db.CARTs.Find(id);
+            CART cART = db.CARTs.Find(new[] {cusID, productID });
             if (cART == null)
             {
                 return HttpNotFound();
@@ -40,7 +40,7 @@ namespace WebMVC_OrderForm.Controllers
         public ActionResult Create()
         {
             ViewBag.CustomerID = new SelectList(db.Customers, "customerID", "fullname");
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID");
+            ViewBag.productID = new SelectList(db.Products, "ProductID", "ProductID");
             return View();
         }
 
@@ -49,7 +49,7 @@ namespace WebMVC_OrderForm.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CustomerID,productID,Total")] CART cART)
+        public ActionResult Create([Bind(Include = "CustomerID,productID,price, quantity")] CART cART)
         {
             if (ModelState.IsValid)
             {
@@ -59,18 +59,18 @@ namespace WebMVC_OrderForm.Controllers
             }
 
             ViewBag.CustomerID = new SelectList(db.Customers, "customerID", "fullname", cART.CustomerID);
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", cART.productID);
+            ViewBag.productID = new SelectList(db.Products, "ProductID", "productID", cART.productID);
             return View(cART);
         }
 
         // GET: CARTs/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string CustomerID, string productID)
         {
-            if (id == null)
+            if (CustomerID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CART cART = db.CARTs.Find(id);
+            CART cART = db.CARTs.Find(new[] { CustomerID, productID });
             if (cART == null)
             {
                 return HttpNotFound();
@@ -85,7 +85,7 @@ namespace WebMVC_OrderForm.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CustomerID,productID,Total")] CART cART)
+        public ActionResult Edit([Bind(Include = "CustomerID,productID,quantity")] CART cART)
         {
             if (ModelState.IsValid)
             {
@@ -94,18 +94,18 @@ namespace WebMVC_OrderForm.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CustomerID = new SelectList(db.Customers, "customerID", "fullname", cART.CustomerID);
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", cART.productID);
+            ViewBag.productID = new SelectList(db.Products, "ProductID", "ProductID", cART.productID);
             return View(cART);
         }
 
         // GET: CARTs/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string CustomerID, string productID)
         {
-            if (id == null)
+            if (CustomerID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            CART cART = db.CARTs.Find(id);
+            CART cART = db.CARTs.Find(new[] { CustomerID, productID});
             if (cART == null)
             {
                 return HttpNotFound();
@@ -116,9 +116,9 @@ namespace WebMVC_OrderForm.Controllers
         // POST: CARTs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string CustomerID, string productID)
         {
-            CART cART = db.CARTs.Find(id);
+            CART cART = db.CARTs.Find(new[] { CustomerID, productID });
             db.CARTs.Remove(cART);
             db.SaveChanges();
             return RedirectToAction("Index");
