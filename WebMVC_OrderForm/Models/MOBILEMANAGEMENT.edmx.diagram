@@ -23,10 +23,10 @@
         <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__DetailOrd__vendo__398D8EEE" ManuallyRouted="false" />
         <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__DetailRec__staff__34C8D9D1" ManuallyRouted="false" />
         <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__Product__vendorI__2A4B4B5E" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.CART" Width="1.5" PointX="5.25" PointY="11.625" />
-        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__CART__CustomerID__49C3F6B7" />
-        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__CART__productID__4AB81AF0" />
-      </Diagram>
+        <EntityTypeShape EntityType="MOBILEMANAGEMENTModel.CART" Width="1.5" PointX="8.25" PointY="11.5" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__CART__CustomerID__45F365D3" />
+        <AssociationConnector Association="MOBILEMANAGEMENTModel.FK__CART__productID__46E78A0C" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

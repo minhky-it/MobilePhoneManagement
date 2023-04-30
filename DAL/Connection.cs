@@ -15,6 +15,9 @@ namespace DAL
             {
                 server = "MINHKY-PC\\MSSQLSERVER01";
             }
+            else if(t == 1){
+                server = "KYNM0211-LAPTOP";
+            }
             else
             {
                 server = "DESKTOP-VL7UGOA\\SQLEXPRESS";
