@@ -2,7 +2,7 @@
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
 }
 
 <h2>Index</h2>
@@ -43,7 +43,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.orderID }) |
+            @Html.ActionLink("Details", "../DetailOrderForms/Index", new { orderID = item.orderID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
         </td>
     </tr>

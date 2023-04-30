@@ -15,10 +15,19 @@ namespace WebMVC_OrderForm.Controllers
         private MOBILEMANAGEMENT db = new MOBILEMANAGEMENT();
 
         // GET: DetailOrderForms
-        public ActionResult Index()
+        public ActionResult Index(string orderID)
         {
-            var detailOrderForms = db.DetailOrderForms.Include(d => d.Product).Include(d => d.Staff).Include(d => d.Vendor);
-            return View(detailOrderForms.ToList());
+            //var detailOrderForms = db.DetailOrderForms.Include(d => d.Product).Include(d => d.Staff).Include(d => d.Vendor);
+            if (orderID == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            List<DetailOrderForm> detailOrderForms = db.DetailOrderForms.Where(e => e.orderID == orderID).ToList();
+            if (detailOrderForms == null)
+            {
+                return HttpNotFound();
+            }
+            return View();
         }
 
         // GET: DetailOrderForms/Details/5
