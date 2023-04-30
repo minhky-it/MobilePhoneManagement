@@ -12,39 +12,46 @@ namespace SE_Project
 {
     public partial class MainForm : Form
     {
-        private Report rp;
-        private ExportOrders eo;
-        private WareHouse wh; 
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        public void formload()
         {
-         }
+            btnExport.FlatStyle = FlatStyle.Flat;
+            btnImport.FlatStyle = FlatStyle.Flat;
+            btnOrder.FlatStyle = FlatStyle.Flat;
+            btnReport.FlatStyle = FlatStyle.Flat;
+            
+            btnExport.FlatAppearance.BorderSize = 0;
+            btnImport.FlatAppearance.BorderSize = 0;
+            btnOrder.FlatAppearance.BorderSize = 0;
+            btnReport.FlatAppearance.BorderSize = 0;
+            
+        }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            formload();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
         {
-            eo = new ExportOrders();
-            eo.Show();
+            Export ep = new Export();
+            ep.Show();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnImport_Click(object sender, EventArgs e)
         {
-            rp = new Report();
-            rp.Show();
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            wh = new WareHouse();
+            WareHouse wh = new WareHouse();
             wh.Show();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Report rp = new Report();
+            rp.Show();
         }
     }
 }
