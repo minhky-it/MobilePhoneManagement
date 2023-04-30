@@ -98,61 +98,71 @@ CREATE TABLE DetailOrderForm (
 )
 GO
 
-INSERT INTO OrderForm VALUES ('O001','Quan7','Da thanh toan','Da order','02-23-2023'),
-							('O002','Quan4','Da thanh toan','Da order','02-20-2023'),
-							('O003','Quan8','Da thanh toan','Da order','02-21-2023');
+INSERT INTO OrderForm VALUES ('O001','District 7','Completly payment','Completly order','02-23-2023'),
+							 ('O002','District 4','Completly payment','Completly order','02-20-2023'),
+							 ('O003','District 8','Completly payment','Completly order','02-21-2023');
+							
+INSERT INTO Vendor VALUES('TGDD', 'TheGioiDiDong', '0126985478', 'thegioididong@tgdd.com.vn'),
+						 ('CPS', 'CellphoneS - Mobile Phone', '0424234614', 'cellphones@gmail.com.vn')
 
-INSERT INTO Vendor VALUES('tgdd', 'The gioi di dong', '0123457', 'thegioididong@tgdd.com.vn'),
-						 ('cps', 'CellphoneS - Dien thoai di dong', '04242346', 'cellphones@gmail.com.vn')
+INSERT INTO Staff VALUES('S001', 'Tran Gia Thieu', 'giathieu@tdtu.com', '0121134124', 'District 4', 'waiter'),
+						('S002', 'Tran Quoc Dung', 'quocdung@tdtu.com', '0234134134', 'District 5', 'waiter'),
+						('S003', 'Le Thi Hanh', 'hanhle@tdtu.com', '0834154189', 'District 1', 'waiter')
 
-INSERT INTO Staff VALUES('xacasd2', 'Tran Gia Thieu', 'giathieu@tdtu.com', '1341234', 'asdafeqweq', 'waiter')
+INSERT INTO Product VALUES('P001','CPS','Iphone 11 64GB',20,'Iphone',6400000,'Black'),
+						  ('P002','CPS','Iphone 11 64GB Pro Max',15,'Iphone',8400000,'Blue'),
+						  ('P003','CPS','Iphone 11 128GB',20,'Iphone',9000000,'Black'),
+						  ('P004','CPS','Iphone 11 128GB Pro Max',15,'Iphone',10000000,'Yellow'),
+						  ('P005','CPS','Iphone 11 256GB',20,'Iphone',11300000,'Blue'),
+						  ('P006','CPS','Iphone 11 256GB Pro Max',15,'Iphone',12400000,'Purple'),
+						  ('P007','TGDD','Iphone 12 128GB',20,'Iphone',15000000,'Yellow'),
+						  ('P008','TGDD','Iphone 12 128GB Pro Max',15,'Iphone',16400000,'Purple'),
+						  ('P009','TGDD','Iphone 12 256GB',20,'Iphone',17000000,'Blue'),
+						  ('P010','TGDD','Iphone 12 256GB Pro Max',15,'Iphone',18700000,'Yellow'),
+						  ('P011','CPS','Iphone 13 128GB',20,'Iphone',20000000,'Purple'),
+						  ('P012','CPS','Iphone 13 128GB Pro Max',15,'Iphone',21300000,''),
+						  ('P013','CPS','Iphone 13 256GB',20,'Iphone',22000000,'Yellow'),
+						  ('P014','CPS','Iphone 13 256GB Pro Max',15,'Iphone',23800000,'Blue'),
+						  ('P015','CPS','Iphone 13 512GB',20,'Iphone',25500000,'Black'),
+						  ('P016','CPS','Iphone 13 512GB Pro Max',15,'Iphone',26000000,'Red'),
+						  ('P017','TGDD','Iphone 14 128GB',20,'Iphone',24000000,'Purple'),
+						  ('P018','TGDD','Iphone 14 128GB Pro Max',15,'Iphone',25600000,'Yellow'),
+						  ('P019','TGDD','Iphone 14 256GB',20,'Iphone',26500000,'Purple'),
+						  ('P020','TGDD','Iphone 14 256GB Pro Max',15,'Iphone',27600000,'Red'),
+						  ('P021','TGDD','Iphone 14 512GB',20,'Iphone',28500000,'Black'),
+						  ('P022','TGDD','Iphone 14 512GB Pro Max',15,'Iphone',29100000,'Blue'),
+						  ('P023','TGDD','Iphone 14 1TB',15,'Iphone',32000000,'Black')
 
-INSERT INTO Product VALUES('P001','cps','Iphone 11 64GB',20,'Iphone',6400000,'Black'),
-						  ('P002','cps','Iphone 11 64GB Pro Max',15,'Iphone',8400000,'Blue'),
-						  ('P003','cps','Iphone 11 128GB',20,'Iphone',9000000,'Black'),
-						  ('P004','cps','Iphone 11 128GB Pro Max',15,'Iphone',10000000,'Yellow'),
-						  ('P005','cps','Iphone 11 256GB',20,'Iphone',11300000,'Blue'),
-						  ('P006','cps','Iphone 11 256GB Pro Max',15,'Iphone',12400000,'Purple'),
-						  ('P007','tgdd','Iphone 12 128GB',20,'Iphone',15000000,'Yellow'),
-						  ('P008','tgdd','Iphone 12 128GB Pro Max',15,'Iphone',16400000,'Purple'),
-						  ('P009','tgdd','Iphone 12 256GB',20,'Iphone',17000000,'Blue'),
-						  ('P010','tgdd','Iphone 12 256GB Pro Max',15,'Iphone',18700000,'Yellow'),
-						  ('P011','cps','Iphone 13 128GB',20,'Iphone',20000000,'Purple'),
-						  ('P012','cps','Iphone 13 128GB Pro Max',15,'Iphone',21300000,''),
-						  ('P013','cps','Iphone 13 256GB',20,'Iphone',22000000,'Yellow'),
-						  ('P014','cps','Iphone 13 256GB Pro Max',15,'Iphone',23800000,'Blue'),
-						  ('P015','cps','Iphone 13 512GB',20,'Iphone',25500000,'Black'),
-						  ('P016','cps','Iphone 13 512GB Pro Max',15,'Iphone',26000000,'Red'),
-						  ('P017','tgdd','Iphone 14 128GB',20,'Iphone',24000000,'Purple'),
-						  ('P018','tgdd','Iphone 14 128GB Pro Max',15,'Iphone',25600000,'Yellow'),
-						  ('P019','tgdd','Iphone 14 256GB',20,'Iphone',26500000,'Purple'),
-						  ('P020','tgdd','Iphone 14 256GB Pro Max',15,'Iphone',27600000,'Red'),
-						  ('P021','tgdd','Iphone 14 512GB',20,'Iphone',28500000,'Black'),
-						  ('P022','tgdd','Iphone 14 512GB Pro Max',15,'Iphone',29100000,'Blue'),
-						  ('P023','tgdd','Iphone 14 1TB',15,'Iphone',32000000,'Black')
+INSERT INTO DetailOrderForm VALUES ('O001','CPS','S001','P001',10),
+								   ('O001','CPS','S001','P002',20),
+								   ('O001','CPS','S001','P003',20),
+								   ('O001','CPS','S001','P005',20),
+								   ('O001','CPS','S001','P008',10),
+								   ('O001','CPS','S001','P012',20),
+								   ('O001','CPS','S001','P013',10),
+								   ('O001','CPS','S001','P014',20),
+								   ('O001','CPS','S001','P015',10),
+								   ('O002','CPS','S002','P004',10),
+								   ('O002','CPS','S002','P006',10),
+								   ('O002','TGDD','S002','P007',15),
+								   ('O002','CPS','S002','P016',10),
+								   ('O002','TGDD','S002','P017',10),
+								   ('O002','TGDD','S002','P018',15),
+								   ('O002','TGDD','S002','P019',10),
+								   ('O002','TGDD','S002','P020',10),
+								   ('O003','TGDD','S003','P009',10),
+								   ('O003','TGDD','S003','P010',10),
+								   ('O003','TGDD','S003','P011',10),
+								   ('O003','TGDD','S003','P021',10),
+								   ('O003','TGDD','S003','P022',10),
+								   ('O003','TGDD','S003','P023',15)
 
-INSERT INTO DetailOrderForm VALUES ('O001','tgdd','xacasd2','P001',20),
-								   ('O001','tgdd','xacasd2','P002',20),
-								   ('O001','tgdd','xacasd2','P003',20),
-								   ('O002','tgdd','xacasd2','P004',10),
-								   ('O002','tgdd','xacasd2','P006',10),
-								   ('O002','tgdd','xacasd2','P007',15),
-								   ('O003','tgdd','xacasd2','P010',10),
-								   ('O003','tgdd','xacasd2','P011',10),
-								   ('O003','tgdd','xacasd2','P021',15)
-CREATE TABLE Account(
-	accountID varchar(50) PRIMARY KEY,
-	status varchar(50),
-	username varchar(50),
-	password varchar(50),
-	role varchar(50)
-)
+INSERT INTO Account VALUES ('A001', 'Activated', 'dat2302', '123456', 'admin'),
+						   ('A002', 'Activated', 'kyvt03', '123456', 'admin'),
+						   ('A003', 'Activated', 'cus001', '123456', 'customer')
+						   
+INSERT INTO Customer VALUES ('C001', 'Customer01', 'example@gmail.com', '0123456789', 'A003','VNPAY')
 
-INSERT INTO Account VALUES ('A001', 'Da kich hoat', 'dat2302', '123456', 'admin')
-INSERT INTO Customer VALUES ('C001', 'Dat Pham', 'example@gmail.com', '0123456789', 'A001','VNPAY')
-INSERT INTO CART VALUES ('C001','P001',10)
-
----DELETE FROM CART WHERE CustomerID = 'C001'
 GO
 
 --SELECT * FROM OrderForm
