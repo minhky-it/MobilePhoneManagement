@@ -9,7 +9,7 @@ namespace DAL
 
         public static void connect()
         {
-            int t = 0;
+            int t = 1;
             string server;
             if (t == 0)
             {
