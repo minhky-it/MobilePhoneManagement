@@ -17,17 +17,16 @@ namespace WebMVC_OrderForm.Controllers
         // GET: DetailOrderForms
         public ActionResult Index(string orderID)
         {
-            //var detailOrderForms = db.DetailOrderForms.Include(d => d.Product).Include(d => d.Staff).Include(d => d.Vendor);
-            if (orderID == null)
+            var detailOrderForms = db.DetailOrderForms.Include(d => d.Product).Include(d => d.Staff).Include(d => d.Vendor).Where(d => d.orderID == orderID);
+            if (detailOrderForms == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            List<DetailOrderForm> detailOrderForms = db.DetailOrderForms.Where(e => e.orderID == orderID).ToList();
             if (detailOrderForms == null)
             {
                 return HttpNotFound();
             }
-            return View();
+            return View(detailOrderForms.ToList());
         }
 
         // GET: DetailOrderForms/Details/5
