@@ -17,7 +17,7 @@
                     <ul>
                         <li>Type: @Html.DisplayFor(modelItem => item.type)</li>
                         <li>
-                            @{string price = Convert.ToDecimal(item.price.ToString()).ToString("C0");}
+                            @{string price = Convert.ToDecimal(item.price.ToString()).ToString("C0", en-us);}
                             @price
                         </li>
                         <li>
