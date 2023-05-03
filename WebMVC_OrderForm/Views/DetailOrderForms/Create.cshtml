@@ -8,10 +8,10 @@
 <h2>Create</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>DetailOrderForm</h4>
         <hr />
@@ -23,17 +23,16 @@
                 @Html.ValidationMessageFor(model => model.orderID, "", new { @class = "text-danger" })
             </div>
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.vendorID, "vendorID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Vendor.vendorName, "Vendor", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("vendorID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.vendorID, "", new { @class = "text-danger" })
+                @Html.DropDownList("Vendor", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Vendor.vendorID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.staffID, "staffID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.staffID, "Staff", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("staffID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.staffID, "", new { @class = "text-danger" })
@@ -41,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.productID, "productID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.productID, "Product", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("productID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.productID, "", new { @class = "text-danger" })
@@ -65,7 +64,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "Index", new { orderID = @ViewBag.orderID })
 </div>
 
 @section Scripts {

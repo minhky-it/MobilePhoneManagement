@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAgent.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Order Form</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -43,7 +43,7 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
-            @Html.ActionLink("Details", "../DetailOrderForms/Index", new { orderID = item.orderID }) |
+            @Html.ActionLink("Details", "../DetailOrderForms/", new { orderID = item.orderID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
         </td>
     </tr>

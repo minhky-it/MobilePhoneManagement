@@ -45,11 +45,12 @@ namespace WebMVC_OrderForm.Controllers
         }
 
         // GET: DetailOrderForms/Create
-        public ActionResult Create()
+        public ActionResult Create(string orderID)
         {
+            ViewBag.orderID = orderID;
             ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID");
-            ViewBag.staffID = new SelectList(db.Staffs, "staffID", "fullname");
-            ViewBag.vendorID = new SelectList(db.Vendors, "vendorID", "vendorName");
+            ViewBag.Staff = new SelectList(db.Staffs, "staffID", "fullname");
+            ViewBag.Vendor = new SelectList(db.Vendors, "vendorID", "vendorID");
             return View();
         }
 
@@ -69,7 +70,7 @@ namespace WebMVC_OrderForm.Controllers
 
             ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", detailOrderForm.productID);
             ViewBag.staffID = new SelectList(db.Staffs, "staffID", "fullname", detailOrderForm.staffID);
-            ViewBag.vendorID = new SelectList(db.Vendors, "vendorID", "vendorName", detailOrderForm.vendorID);
+            ViewBag.vendorID = new SelectList(db.Vendors, "vendorID", "vendorID", detailOrderForm.vendorID);
             return View(detailOrderForm);
         }
 
