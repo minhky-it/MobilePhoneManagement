@@ -169,7 +169,6 @@ INSERT INTO Account VALUES ('A001', 'Activated', 'dat2302', '123456', 'admin'),
 INSERT INTO Customer VALUES ('C001', 'Customer01', 'example@gmail.com', '0123456789', 'A003','VNPAY')
 
 GO
-SELECT * FROM CART
 --SELECT * FROM OrderForm
 --SELECT * FROM DetailOrderForm WHERE orderID = 'O001'
 --SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'
