@@ -26,21 +26,25 @@ namespace WebMVC_OrderForm.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.orderID = orderID;
             return View(detailOrderForms.ToList());
         }
 
         // GET: DetailOrderForms/Details/5
-        public ActionResult Details(string id)
+        public ActionResult Details(string orderID, string productID, string vendorID)
         {
-            if (id == null)
+            if (orderID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(id);
+            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(new[] { orderID, vendorID, productID });
             if (detailOrderForm == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.productID = productID;
+            ViewBag.vendorID = vendorID;
+            ViewBag.orderID = orderID;
             return View(detailOrderForm);
         }
 
@@ -48,9 +52,9 @@ namespace WebMVC_OrderForm.Controllers
         public ActionResult Create(string orderID)
         {
             ViewBag.orderID = orderID;
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID");
-            ViewBag.Staff = new SelectList(db.Staffs, "staffID", "fullname");
-            ViewBag.Vendor = new SelectList(db.Vendors, "vendorID", "vendorID");
+            ViewBag.productID = new SelectList(db.Products, "ProductID", "name");
+            ViewBag.staffID = new SelectList(db.Staffs, "staffID", "fullname");
+            ViewBag.vendorID = new SelectList(db.Vendors, "vendorID", "vendorID");
             return View();
         }
 
@@ -65,28 +69,28 @@ namespace WebMVC_OrderForm.Controllers
             {
                 db.DetailOrderForms.Add(detailOrderForm);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { orderID = detailOrderForm.orderID });
             }
-
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", detailOrderForm.productID);
+            ViewBag.productID = new SelectList(db.Products, "ProductID", "name", detailOrderForm.productID);
             ViewBag.staffID = new SelectList(db.Staffs, "staffID", "fullname", detailOrderForm.staffID);
             ViewBag.vendorID = new SelectList(db.Vendors, "vendorID", "vendorID", detailOrderForm.vendorID);
             return View(detailOrderForm);
         }
 
         // GET: DetailOrderForms/Edit/5
-        public ActionResult Edit(string id)
+        public ActionResult Edit(string orderID, string productID, string vendorID)
         {
-            if (id == null)
+            if (orderID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(id);
+            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(new[] { orderID, vendorID, productID });
             if (detailOrderForm == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", detailOrderForm.productID);
+            ViewBag.orderID = orderID;
+            ViewBag.productID = new SelectList(db.Products, "ProductID", "name", detailOrderForm.productID);
             ViewBag.staffID = new SelectList(db.Staffs, "staffID", "fullname", detailOrderForm.staffID);
             ViewBag.vendorID = new SelectList(db.Vendors, "vendorID", "vendorName", detailOrderForm.vendorID);
             return View(detailOrderForm);
@@ -103,7 +107,7 @@ namespace WebMVC_OrderForm.Controllers
             {
                 db.Entry(detailOrderForm).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", new { orderID = detailOrderForm.orderID });
             }
             ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", detailOrderForm.productID);
             ViewBag.staffID = new SelectList(db.Staffs, "staffID", "fullname", detailOrderForm.staffID);
@@ -112,29 +116,30 @@ namespace WebMVC_OrderForm.Controllers
         }
 
         // GET: DetailOrderForms/Delete/5
-        public ActionResult Delete(string id)
+        public ActionResult Delete(string orderID, string productID, string vendorID)
         {
-            if (id == null)
+            if (orderID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(id);
+            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(new[] { orderID, vendorID, productID });
             if (detailOrderForm == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.orderID = orderID;
             return View(detailOrderForm);
         }
 
         // POST: DetailOrderForms/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public ActionResult DeleteConfirmed(string orderID, string productID, string vendorID)
         {
-            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(id);
+            DetailOrderForm detailOrderForm = db.DetailOrderForms.Find(new[] { orderID, vendorID, productID });
             db.DetailOrderForms.Remove(detailOrderForm);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", new { orderID = detailOrderForm.orderID });
         }
 
         protected override void Dispose(bool disposing)

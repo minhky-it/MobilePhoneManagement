@@ -79,7 +79,8 @@ CREATE TABLE OrderForm(
 CREATE TABLE CART(
 	CustomerID varchar(50),
 	productID varchar(50),
-	Total int,
+	quantity int
+	price int,
 	PRIMARY KEY (CustomerID, productID),
 	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
 	FOREIGN KEY (productID) REFERENCES Product (productID)
