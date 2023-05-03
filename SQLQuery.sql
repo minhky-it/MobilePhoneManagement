@@ -79,7 +79,8 @@ CREATE TABLE OrderForm(
 CREATE TABLE CART(
 	CustomerID varchar(50),
 	productID varchar(50),
-	Total int,
+	quantity int,
+	price int,
 	PRIMARY KEY (CustomerID, productID),
 	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
 	FOREIGN KEY (productID) REFERENCES Product (productID)
@@ -120,7 +121,7 @@ INSERT INTO Product VALUES('P001','CPS','Iphone 11 64GB',20,'Iphone',6400000,'Bl
 						  ('P009','TGDD','Iphone 12 256GB',20,'Iphone',17000000,'Blue'),
 						  ('P010','TGDD','Iphone 12 256GB Pro Max',15,'Iphone',18700000,'Yellow'),
 						  ('P011','CPS','Iphone 13 128GB',20,'Iphone',20000000,'Purple'),
-						  ('P012','CPS','Iphone 13 128GB Pro Max',15,'Iphone',21300000,''),
+						  ('P012','CPS','Iphone 13 128GB Pro Max',15,'Iphone',21300000,'Black'),
 						  ('P013','CPS','Iphone 13 256GB',20,'Iphone',22000000,'Yellow'),
 						  ('P014','CPS','Iphone 13 256GB Pro Max',15,'Iphone',23800000,'Blue'),
 						  ('P015','CPS','Iphone 13 512GB',20,'Iphone',25500000,'Black'),

@@ -5,29 +5,16 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3><strong>Phone Information</strong></h3>
+<div class="title_"><strong>Phone Detail Information</strong></div>
 
-<table class="table">
+<table class="table table-bordered">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.color)
-        </th>
-        <th></th>
+        <th>Product ID</th>
+        <th>Phone Name</th>
+        <th>Quanlity</th>
+        <th>Phone Type</th>
+        <th>Price</th>
+        <th>Color</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -45,7 +32,8 @@
         @Html.DisplayFor(modelItem => item.type)
     </td>
     <td>
-        @Html.DisplayFor(modelItem => item.price)
+        @{string price = Convert.ToDecimal(item.price.ToString()).ToString("C0");}
+        @price
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.color)

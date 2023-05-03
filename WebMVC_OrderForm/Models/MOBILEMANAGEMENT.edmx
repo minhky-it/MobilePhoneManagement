@@ -134,7 +134,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CART__CustomerID__45F365D3">
+        <Association Name="FK__CART__CustomerID__398D8EEE">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="CART" Type="Self.CART" Multiplicity="*" />
           <ReferentialConstraint>
@@ -146,7 +146,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CART__productID__46E78A0C">
+        <Association Name="FK__CART__productID__3A81B327">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="CART" Type="Self.CART" Multiplicity="*" />
           <ReferentialConstraint>
@@ -170,7 +170,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetailOrd__produ__3B75D760">
+        <Association Name="FK__DetailOrd__produ__3F466844">
           <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="DetailOrderForm" Type="Self.DetailOrderForm" Multiplicity="*" />
           <ReferentialConstraint>
@@ -182,7 +182,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetailOrd__staff__3A81B327">
+        <Association Name="FK__DetailOrd__staff__3E52440B">
           <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
           <End Role="DetailOrderForm" Type="Self.DetailOrderForm" Multiplicity="*" />
           <ReferentialConstraint>
@@ -194,7 +194,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetailOrd__vendo__398D8EEE">
+        <Association Name="FK__DetailOrd__vendo__3D5E1FD2">
           <End Role="Vendor" Type="Self.Vendor" Multiplicity="1" />
           <End Role="DetailOrderForm" Type="Self.DetailOrderForm" Multiplicity="*" />
           <ReferentialConstraint>
@@ -261,11 +261,11 @@
             <End Role="Product" EntitySet="Product" />
             <End Role="Bill" EntitySet="Bill" />
           </AssociationSet>
-          <AssociationSet Name="FK__CART__CustomerID__45F365D3" Association="Self.FK__CART__CustomerID__45F365D3">
+          <AssociationSet Name="FK__CART__CustomerID__398D8EEE" Association="Self.FK__CART__CustomerID__398D8EEE">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="CART" EntitySet="CART" />
           </AssociationSet>
-          <AssociationSet Name="FK__CART__productID__46E78A0C" Association="Self.FK__CART__productID__46E78A0C">
+          <AssociationSet Name="FK__CART__productID__3A81B327" Association="Self.FK__CART__productID__3A81B327">
             <End Role="Product" EntitySet="Product" />
             <End Role="CART" EntitySet="CART" />
           </AssociationSet>
@@ -273,15 +273,15 @@
             <End Role="Account" EntitySet="Account" />
             <End Role="Customer" EntitySet="Customer" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetailOrd__produ__3B75D760" Association="Self.FK__DetailOrd__produ__3B75D760">
+          <AssociationSet Name="FK__DetailOrd__produ__3F466844" Association="Self.FK__DetailOrd__produ__3F466844">
             <End Role="Product" EntitySet="Product" />
             <End Role="DetailOrderForm" EntitySet="DetailOrderForm" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetailOrd__staff__3A81B327" Association="Self.FK__DetailOrd__staff__3A81B327">
+          <AssociationSet Name="FK__DetailOrd__staff__3E52440B" Association="Self.FK__DetailOrd__staff__3E52440B">
             <End Role="Staff" EntitySet="Staff" />
             <End Role="DetailOrderForm" EntitySet="DetailOrderForm" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetailOrd__vendo__398D8EEE" Association="Self.FK__DetailOrd__vendo__398D8EEE">
+          <AssociationSet Name="FK__DetailOrd__vendo__3D5E1FD2" Association="Self.FK__DetailOrd__vendo__3D5E1FD2">
             <End Role="Vendor" EntitySet="Vendor" />
             <End Role="DetailOrderForm" EntitySet="DetailOrderForm" />
           </AssociationSet>
