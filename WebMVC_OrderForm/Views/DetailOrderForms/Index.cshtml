@@ -1,21 +1,14 @@
 ﻿@model IEnumerable<WebMVC_OrderForm.Models.DetailOrderForm>
 
 @{
-    ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "The list of" + ViewBag.orderID;
+    Layout = "~/Views/Shared/_LayoutAgent.cshtml";
 }
 
+<h2>Details of order: @ViewBag.orderID</h2>   
 
-@{
-    var firstItem = Model.FirstOrDefault();
-}
-@if (firstItem != null)
-{
-    <h2>Details of order: @firstItem.orderID</h2>
-    
-}
 <p>
-    @Html.ActionLink("Create New", "Create", new { orderID= @firstItem.orderID })
+    @Html.ActionLink("Add New Product", "Create", new { orderID= @ViewBag.orderID })
 </p>
 <table class="table">
     <tr>
@@ -56,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.Vendor.vendorName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new { orderID = item.orderID, productID = item.productID, vendorID = item.vendorID }) |
+                @Html.ActionLink("Details", "Details", new { orderID = item.orderID, productID = item.productID, vendorID = item.vendorID }) |
+                @Html.ActionLink("Delete", "Delete", new { orderID = item.orderID, productID = item.productID, vendorID = item.vendorID })
             </td>
         </tr>
     }

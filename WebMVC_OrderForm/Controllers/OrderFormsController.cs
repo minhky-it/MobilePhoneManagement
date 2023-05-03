@@ -51,6 +51,8 @@ namespace WebMVC_OrderForm.Controllers
         {
             if (ModelState.IsValid)
             {
+                orderForm.status = "IN PREPARATION";
+                orderForm.statusPayment = "WAITING FOR PAYING";
                 db.OrderForms.Add(orderForm);
                 db.SaveChanges();
                 return RedirectToAction("Index");
