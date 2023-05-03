@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAgent.cshtml";
 }
 
-<h2>Details of order: @ViewBag.orderID</h2>   
+<div class="title_"><strong>Details of order: @ViewBag.orderID</strong></div>  
 
 <p>
     @Html.ActionLink("Add New Product", "Create", new { orderID= @ViewBag.orderID })

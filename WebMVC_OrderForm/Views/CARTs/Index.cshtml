@@ -5,23 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>CART</h2>
+<div class="title_"><strong>CART</strong></div>
 
-<h3>The list of item added</h3>
-<table class="table">
+<h3>The list of phones added</h3>
+<table class="table table-bordered">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.ProductID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.quantity)
-        </th>
+        <th>Product ID</th>
+        <th>Phone Name</th>
+        <th>Price</th>
+        <th>Quanlity</th>
     </tr>
     @{double total = 0;}
     @foreach (var item in Model)
@@ -50,4 +42,4 @@
 </table>
 @{string result = total.ToString("C0");}
 <h3>Total: @result</h3>
-<input type="submit" value="Order" class="btn btn-primary" />
+<input type="submit" value="Order" class="button-add" />

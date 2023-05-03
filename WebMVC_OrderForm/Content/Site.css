@@ -102,3 +102,18 @@ span {
 .table-product {
     border: 1px solid gray;
 }
+
+.button-action {
+    border: 1px solid gray;
+    border-radius: 7px;
+    padding: 6px;
+    width: 60px;
+    height: 35px;
+    background-color: #D0011B;
+    color: white;
+    margin-right: 5px;
+}
+
+.button-action:hover {
+    background-color: #D41830;
+}
