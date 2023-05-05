@@ -50,22 +50,21 @@ CREATE TABLE Customer(
 
 CREATE TABLE Bill(
 	billID varchar(50) PRIMARY KEY,
-	customerID varchar(50),
-	productID varchar(50),
 	total float,
-	outDate Date,
-	FOREIGN KEY (customerID) REFERENCES Customer (customerID),
-	FOREIGN KEY (productID) REFERENCES Product (ProductID)
+	createDate Date,
+	address varchar(255),
+	email varchar(255),
+	phone varchar(32),
+	fullname varchar(255),
 )
 
 CREATE TABLE DetailReceipt(
 	billID varchar(50),
-	staffID varchar(50),
+	productID varchar(50),
 	quantity int,
-	total float,
-	PRIMARY KEY (billID, staffID),
+	PRIMARY KEY (billID, productID),
 	FOREIGN KEY (billID) REFERENCES Bill (billID),
-	FOREIGN KEY (staffID) REFERENCES Staff (staffID)
+	FOREIGN KEY (productID) REFERENCES Product (productID),
 )
 
 CREATE TABLE OrderForm(
