@@ -53,5 +53,10 @@ namespace SE_Project
             Report rp = new Report();
             rp.Show();
         }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://localhost:44397/OrderForms");
+        }
     }
 }

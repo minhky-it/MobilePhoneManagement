@@ -5,48 +5,49 @@
     Layout = "~/Views/Shared/_LayoutAgent.cshtml";
 }
 
-<h2>Order Form</h2>
+<div class="title_"><strong>Order Form</strong></div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<table class="table table-bordered">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.addrress)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.statusPayment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.status)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.deliveryDate)
-        </th>
-        <th></th>
+        <th>Address</th>
+        <th>Status Payment</th>
+        <th>Status</th>
+        <th>Delivery Date</th>
+        <th>Action</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.addrress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.statusPayment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.deliveryDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.orderID }) |
-            @Html.ActionLink("Details", "../DetailOrderForms/", new { orderID = item.orderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.orderID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.addrress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.statusPayment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deliveryDate)
+            </td>
+            <td>
+                <button class="button-action">
+                    @Html.ActionLink("Edit", "Edit", new { id = item.orderID }, new { @class = "btn-name" })
+                </button>
 
+                <button class="button-action">
+                    @Html.ActionLink("Details", "../DetailOrderForms/", new { orderID = item.orderID }, new { @class = "btn-name" })
+                </button>
+
+                <button class="button-action">
+                    @Html.ActionLink("Delete", "Delete", new { id = item.orderID }, new { @class = "btn-name" })
+                </button>
+                </td>
+        </tr>
+     }
 </table>
+
+<button class="button-add">
+    @Html.ActionLink("Create", "Create", null, new { @class = "btn-name" })
+</button>

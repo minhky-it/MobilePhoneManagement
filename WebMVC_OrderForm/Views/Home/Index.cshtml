@@ -5,35 +5,35 @@
 }
 <div class="title_"><strong>DK Mobile Phone Store</strong></div>
 <div class="container">
-<h3><strong>Home Page</strong></h3>
-<div class="row">
-    @foreach (var item in Model)
-    {
-    <div class="col-lg-4">
-        <div class="products">
-            <div class="products__header">
-                @Html.DisplayFor(modelItem => item.name)
-            </div>
-            <div class="products__content">
-                <ul>
-                    <li>Type: @Html.DisplayFor(modelItem => item.type)</li>
-                    <li>
-                        Price:
-                        @{string price = Convert.ToDecimal(item.price.ToString()).ToString("C0");}
-                        @price
-                    </li>
-                    <li>
-                        Color:
-                        @Html.DisplayFor(modelItem => item.color)
-                    </li>
-                </ul>
-            </div>
-            <div class="products__footer">
-                <button class="button-add">
-                    @Html.ActionLink("Add To Cart", "../CARTs/Create", new { productID = item.ProductID }, new { @class = "btn-name" })
-                </button>
+    <div class="row">
+        @foreach (var item in Model)
+        {
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <div class="products">
+                <div class="product__header">
+                    <strong>@Html.DisplayFor(modelItem => item.name)</strong>
+                </div>
+
+                <div class="products__content">
+                    <ul>
+                        <li>Type: @Html.DisplayFor(modelItem => item.type)</li>
+                        <li>Price:
+                            @{string price = Convert.ToDecimal(item.price.ToString()).ToString("C0");}
+                            @price
+                        </li>
+                        <li>Color:
+                            @Html.DisplayFor(modelItem => item.color)
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="products__footer">
+                    <button class="button-add">
+                        @Html.ActionLink("Add To Cart", "../CARTs/Create", new { productID = item.ProductID }, new { @class = "btn-name" })
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
      }
+     </div>
 </div>

@@ -5,29 +5,17 @@
     Layout = "~/Views/Shared/_LayoutAgent.cshtml";
 }
 
-<h2>The products are available in the inventory</h2>
+<div class="title_"><strong>The products are available in the inventory</strong></div>
 
-<table class="table">
+<table class="table table-bordered">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.quantity)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.type)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.color)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Vendor.vendorName)
-        </th>
-        <th></th>
+        <th>Phone Name</th>
+        <th>Quanlity</th>
+        <th>Phone Type</th>
+        <th>Price</th>
+        <th>Color</th>
+        <th>Vendor Name</th>
+        <th>Action</th>
     </tr>
 
 @foreach (var item in Model) {
@@ -42,7 +30,8 @@
             @Html.DisplayFor(modelItem => item.type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.price)
+            @{string price = Convert.ToDecimal(item.price.ToString()).ToString("C0");}
+            @price
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.color)
@@ -51,9 +40,17 @@
             @Html.DisplayFor(modelItem => item.Vendor.vendorName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProductID })
+            <button class="button-action">
+                @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @class = "btn-name" })
+            </button>
+
+            <button class="button-action">
+                @Html.ActionLink("Detail", "Details", new { id = item.ProductID }, new { @class = "btn-name" })
+            </button>
+
+            <button class="button-action">
+                @Html.ActionLink("Delete", "Delete", new { id = item.ProductID }, new { @class = "btn-name" })
+            </button>
         </td>
     </tr>
 }
