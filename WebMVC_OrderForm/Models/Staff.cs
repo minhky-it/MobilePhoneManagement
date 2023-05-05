@@ -17,7 +17,6 @@ namespace WebMVC_OrderForm.Models
         public Staff()
         {
             this.DetailOrderForms = new HashSet<DetailOrderForm>();
-            this.DetailReceipts = new HashSet<DetailReceipt>();
         }
     
         public string staffID { get; set; }
@@ -28,6 +27,5 @@ namespace WebMVC_OrderForm.Models
         public string role { get; set; }
     
         public virtual ICollection<DetailOrderForm> DetailOrderForms { get; set; }
-        public virtual ICollection<DetailReceipt> DetailReceipts { get; set; }
     }
 }

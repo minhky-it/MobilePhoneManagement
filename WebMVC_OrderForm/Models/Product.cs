@@ -16,9 +16,9 @@ namespace WebMVC_OrderForm.Models
     {
         public Product()
         {
-            this.Bills = new HashSet<Bill>();
             this.DetailOrderForms = new HashSet<DetailOrderForm>();
             this.CARTs = new HashSet<CART>();
+            this.DetailReceipts = new HashSet<DetailReceipt>();
         }
     
         public string ProductID { get; set; }
@@ -29,9 +29,9 @@ namespace WebMVC_OrderForm.Models
         public Nullable<double> price { get; set; }
         public string color { get; set; }
     
-        public virtual ICollection<Bill> Bills { get; set; }
         public virtual ICollection<DetailOrderForm> DetailOrderForms { get; set; }
         public virtual Vendor Vendor { get; set; }
         public virtual ICollection<CART> CARTs { get; set; }
+        public virtual ICollection<DetailReceipt> DetailReceipts { get; set; }
     }
 }

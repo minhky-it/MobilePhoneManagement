@@ -15,11 +15,10 @@ namespace WebMVC_OrderForm.Models
     public partial class DetailReceipt
     {
         public string billID { get; set; }
-        public string staffID { get; set; }
+        public string productID { get; set; }
         public Nullable<int> quantity { get; set; }
-        public Nullable<double> total { get; set; }
     
         public virtual Bill Bill { get; set; }
-        public virtual Staff Staff { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

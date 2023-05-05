@@ -20,13 +20,13 @@ namespace WebMVC_OrderForm.Models
         }
     
         public string billID { get; set; }
-        public string customerID { get; set; }
-        public string productID { get; set; }
         public Nullable<double> total { get; set; }
-        public Nullable<System.DateTime> outDate { get; set; }
+        public Nullable<System.DateTime> createDate { get; set; }
+        public string address { get; set; }
+        public string email { get; set; }
+        public string phone { get; set; }
+        public string fullname { get; set; }
     
-        public virtual Customer Customer { get; set; }
-        public virtual Product Product { get; set; }
         public virtual ICollection<DetailReceipt> DetailReceipts { get; set; }
     }
 }

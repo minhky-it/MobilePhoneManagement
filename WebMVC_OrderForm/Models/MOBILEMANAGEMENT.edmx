@@ -20,10 +20,12 @@
             <PropertyRef Name="billID" />
           </Key>
           <Property Name="billID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="customerID" Type="varchar" MaxLength="50" />
-          <Property Name="productID" Type="varchar" MaxLength="50" />
           <Property Name="total" Type="float" />
-          <Property Name="outDate" Type="date" />
+          <Property Name="createDate" Type="date" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="email" Type="varchar" MaxLength="255" />
+          <Property Name="phone" Type="varchar" MaxLength="32" />
+          <Property Name="fullname" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="CART">
           <Key>
@@ -61,12 +63,11 @@
         <EntityType Name="DetailReceipt">
           <Key>
             <PropertyRef Name="billID" />
-            <PropertyRef Name="staffID" />
+            <PropertyRef Name="productID" />
           </Key>
           <Property Name="billID" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="staffID" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="productID" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="quantity" Type="int" />
-          <Property Name="total" Type="float" />
         </EntityType>
         <EntityType Name="OrderForm">
           <Key>
@@ -110,30 +111,6 @@
           <Property Name="phone" Type="varchar" MaxLength="50" />
           <Property Name="email" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK__Bill__customerID__300424B4">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="customerID" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="customerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Bill__productID__30F848ED">
-          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="productID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__CART__CustomerID__45F365D3">
           <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
           <End Role="CART" Type="Self.CART" Multiplicity="*" />
@@ -206,7 +183,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetailRec__billI__33D4B598">
+        <Association Name="FK__DetailRec__billI__4BAC3F29">
           <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
           <End Role="DetailReceipt" Type="Self.DetailReceipt" Multiplicity="*" />
           <ReferentialConstraint>
@@ -218,15 +195,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetailRec__staff__34C8D9D1">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+        <Association Name="FK__DetailRec__produ__4CA06362">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
           <End Role="DetailReceipt" Type="Self.DetailReceipt" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Staff">
-              <PropertyRef Name="staffID" />
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
             </Principal>
             <Dependent Role="DetailReceipt">
-              <PropertyRef Name="staffID" />
+              <PropertyRef Name="productID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -253,14 +230,6 @@
           <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vendor" EntityType="Self.Vendor" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Bill__customerID__300424B4" Association="Self.FK__Bill__customerID__300424B4">
-            <End Role="Customer" EntitySet="Customer" />
-            <End Role="Bill" EntitySet="Bill" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Bill__productID__30F848ED" Association="Self.FK__Bill__productID__30F848ED">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Bill" EntitySet="Bill" />
-          </AssociationSet>
           <AssociationSet Name="FK__CART__CustomerID__45F365D3" Association="Self.FK__CART__CustomerID__45F365D3">
             <End Role="Customer" EntitySet="Customer" />
             <End Role="CART" EntitySet="CART" />
@@ -285,12 +254,12 @@
             <End Role="Vendor" EntitySet="Vendor" />
             <End Role="DetailOrderForm" EntitySet="DetailOrderForm" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetailRec__billI__33D4B598" Association="Self.FK__DetailRec__billI__33D4B598">
+          <AssociationSet Name="FK__DetailRec__billI__4BAC3F29" Association="Self.FK__DetailRec__billI__4BAC3F29">
             <End Role="Bill" EntitySet="Bill" />
             <End Role="DetailReceipt" EntitySet="DetailReceipt" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetailRec__staff__34C8D9D1" Association="Self.FK__DetailRec__staff__34C8D9D1">
-            <End Role="Staff" EntitySet="Staff" />
+          <AssociationSet Name="FK__DetailRec__produ__4CA06362" Association="Self.FK__DetailRec__produ__4CA06362">
+            <End Role="Product" EntitySet="Product" />
             <End Role="DetailReceipt" EntitySet="DetailReceipt" />
           </AssociationSet>
           <AssociationSet Name="FK__Product__vendorI__2A4B4B5E" Association="Self.FK__Product__vendorI__2A4B4B5E">
@@ -313,19 +282,6 @@
           <Property Name="role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Customers" Relationship="Self.FK__Customer__accoun__2D27B809" FromRole="Account" ToRole="Customer" />
         </EntityType>
-        <EntityType Name="Bill">
-          <Key>
-            <PropertyRef Name="billID" />
-          </Key>
-          <Property Name="billID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="customerID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="productID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="total" Type="Double" />
-          <Property Name="outDate" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Customer" Relationship="Self.FK__Bill__customerID__300424B4" FromRole="Bill" ToRole="Customer" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Bill__productID__30F848ED" FromRole="Bill" ToRole="Product" />
-          <NavigationProperty Name="DetailReceipts" Relationship="Self.FK__DetailRec__billI__33D4B598" FromRole="Bill" ToRole="DetailReceipt" />
-        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="customerID" />
@@ -337,7 +293,6 @@
           <Property Name="accountID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="paymentInfo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Account" Relationship="Self.FK__Customer__accoun__2D27B809" FromRole="Customer" ToRole="Account" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__customerID__300424B4" FromRole="Customer" ToRole="Bill" />
           <NavigationProperty Name="CARTs" Relationship="MOBILEMANAGEMENTModel.FK__CART__CustomerID__45F365D3" FromRole="Customer" ToRole="CART" />
         </EntityType>
         <EntityType Name="DetailOrderForm">
@@ -354,18 +309,6 @@
           <NavigationProperty Name="Product" Relationship="Self.FK__DetailOrd__produ__3B75D760" FromRole="DetailOrderForm" ToRole="Product" />
           <NavigationProperty Name="Staff" Relationship="Self.FK__DetailOrd__staff__3A81B327" FromRole="DetailOrderForm" ToRole="Staff" />
           <NavigationProperty Name="Vendor" Relationship="Self.FK__DetailOrd__vendo__398D8EEE" FromRole="DetailOrderForm" ToRole="Vendor" />
-        </EntityType>
-        <EntityType Name="DetailReceipt">
-          <Key>
-            <PropertyRef Name="billID" />
-            <PropertyRef Name="staffID" />
-          </Key>
-          <Property Name="billID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="staffID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="quantity" Type="Int32" />
-          <Property Name="total" Type="Double" />
-          <NavigationProperty Name="Bill" Relationship="Self.FK__DetailRec__billI__33D4B598" FromRole="DetailReceipt" ToRole="Bill" />
-          <NavigationProperty Name="Staff" Relationship="Self.FK__DetailRec__staff__34C8D9D1" FromRole="DetailReceipt" ToRole="Staff" />
         </EntityType>
         <EntityType Name="OrderForm">
           <Key>
@@ -388,10 +331,10 @@
           <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="price" Type="Double" />
           <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="Bills" Relationship="Self.FK__Bill__productID__30F848ED" FromRole="Product" ToRole="Bill" />
           <NavigationProperty Name="DetailOrderForms" Relationship="Self.FK__DetailOrd__produ__3B75D760" FromRole="Product" ToRole="DetailOrderForm" />
           <NavigationProperty Name="Vendor" Relationship="Self.FK__Product__vendorI__2A4B4B5E" FromRole="Product" ToRole="Vendor" />
           <NavigationProperty Name="CARTs" Relationship="MOBILEMANAGEMENTModel.FK__CART__productID__46E78A0C" FromRole="Product" ToRole="CART" />
+          <NavigationProperty Name="DetailReceipts" Relationship="MOBILEMANAGEMENTModel.FK__DetailRec__produ__4CA06362" FromRole="Product" ToRole="DetailReceipt" />
         </EntityType>
         <EntityType Name="Staff">
           <Key>
@@ -404,7 +347,6 @@
           <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="role" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="DetailOrderForms" Relationship="Self.FK__DetailOrd__staff__3A81B327" FromRole="Staff" ToRole="DetailOrderForm" />
-          <NavigationProperty Name="DetailReceipts" Relationship="Self.FK__DetailRec__staff__34C8D9D1" FromRole="Staff" ToRole="DetailReceipt" />
         </EntityType>
         <EntityType Name="Vendor">
           <Key>
@@ -426,42 +368,6 @@
             </Principal>
             <Dependent Role="Customer">
               <PropertyRef Name="accountID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Bill__customerID__300424B4">
-          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Customer">
-              <PropertyRef Name="customerID" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="customerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__Bill__productID__30F848ED">
-          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Product">
-              <PropertyRef Name="ProductID" />
-            </Principal>
-            <Dependent Role="Bill">
-              <PropertyRef Name="productID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__DetailRec__billI__33D4B598">
-          <End Role="Bill" Type="Self.Bill" Multiplicity="1" />
-          <End Role="DetailReceipt" Type="Self.DetailReceipt" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Bill">
-              <PropertyRef Name="billID" />
-            </Principal>
-            <Dependent Role="DetailReceipt">
-              <PropertyRef Name="billID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -501,18 +407,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__DetailRec__staff__34C8D9D1">
-          <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
-          <End Role="DetailReceipt" Type="Self.DetailReceipt" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Staff">
-              <PropertyRef Name="staffID" />
-            </Principal>
-            <Dependent Role="DetailReceipt">
-              <PropertyRef Name="staffID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Product__vendorI__2A4B4B5E">
           <End Role="Vendor" Type="Self.Vendor" Multiplicity="0..1" />
           <End Role="Product" Type="Self.Product" Multiplicity="*" />
@@ -527,10 +421,8 @@
         </Association>
         <EntityContainer Name="MOBILEMANAGEMENT" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Accounts" EntityType="Self.Account" />
-          <EntitySet Name="Bills" EntityType="Self.Bill" />
           <EntitySet Name="Customers" EntityType="Self.Customer" />
           <EntitySet Name="DetailOrderForms" EntityType="Self.DetailOrderForm" />
-          <EntitySet Name="DetailReceipts" EntityType="Self.DetailReceipt" />
           <EntitySet Name="OrderForms" EntityType="Self.OrderForm" />
           <EntitySet Name="Products" EntityType="Self.Product" />
           <EntitySet Name="Staffs" EntityType="Self.Staff" />
@@ -538,18 +430,6 @@
           <AssociationSet Name="FK__Customer__accoun__2D27B809" Association="Self.FK__Customer__accoun__2D27B809">
             <End Role="Account" EntitySet="Accounts" />
             <End Role="Customer" EntitySet="Customers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Bill__customerID__300424B4" Association="Self.FK__Bill__customerID__300424B4">
-            <End Role="Customer" EntitySet="Customers" />
-            <End Role="Bill" EntitySet="Bills" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Bill__productID__30F848ED" Association="Self.FK__Bill__productID__30F848ED">
-            <End Role="Product" EntitySet="Products" />
-            <End Role="Bill" EntitySet="Bills" />
-          </AssociationSet>
-          <AssociationSet Name="FK__DetailRec__billI__33D4B598" Association="Self.FK__DetailRec__billI__33D4B598">
-            <End Role="Bill" EntitySet="Bills" />
-            <End Role="DetailReceipt" EntitySet="DetailReceipts" />
           </AssociationSet>
           <AssociationSet Name="FK__DetailOrd__produ__3B75D760" Association="Self.FK__DetailOrd__produ__3B75D760">
             <End Role="Product" EntitySet="Products" />
@@ -563,10 +443,6 @@
             <End Role="Vendor" EntitySet="Vendors" />
             <End Role="DetailOrderForm" EntitySet="DetailOrderForms" />
           </AssociationSet>
-          <AssociationSet Name="FK__DetailRec__staff__34C8D9D1" Association="Self.FK__DetailRec__staff__34C8D9D1">
-            <End Role="Staff" EntitySet="Staffs" />
-            <End Role="DetailReceipt" EntitySet="DetailReceipts" />
-          </AssociationSet>
           <AssociationSet Name="FK__Product__vendorI__2A4B4B5E" Association="Self.FK__Product__vendorI__2A4B4B5E">
             <End Role="Vendor" EntitySet="Vendors" />
             <End Role="Product" EntitySet="Products" />
@@ -579,6 +455,16 @@
           <AssociationSet Name="FK__CART__productID__46E78A0C" Association="MOBILEMANAGEMENTModel.FK__CART__productID__46E78A0C">
             <End Role="Product" EntitySet="Products" />
             <End Role="CART" EntitySet="CARTs" />
+          </AssociationSet>
+          <EntitySet Name="Bills" EntityType="MOBILEMANAGEMENTModel.Bill" />
+          <EntitySet Name="DetailReceipts" EntityType="MOBILEMANAGEMENTModel.DetailReceipt" />
+          <AssociationSet Name="FK__DetailRec__billI__4BAC3F29" Association="MOBILEMANAGEMENTModel.FK__DetailRec__billI__4BAC3F29">
+            <End Role="Bill" EntitySet="Bills" />
+            <End Role="DetailReceipt" EntitySet="DetailReceipts" />
+          </AssociationSet>
+          <AssociationSet Name="FK__DetailRec__produ__4CA06362" Association="MOBILEMANAGEMENTModel.FK__DetailRec__produ__4CA06362">
+            <End Role="Product" EntitySet="Products" />
+            <End Role="DetailReceipt" EntitySet="DetailReceipts" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="CART">
@@ -617,6 +503,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Bill">
+          <Key>
+            <PropertyRef Name="billID" />
+          </Key>
+          <Property Name="billID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="total" Type="Double" />
+          <Property Name="createDate" Type="DateTime" Precision="0" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="fullname" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="DetailReceipts" Relationship="MOBILEMANAGEMENTModel.FK__DetailRec__billI__4BAC3F29" FromRole="Bill" ToRole="DetailReceipt" />
+        </EntityType>
+        <EntityType Name="DetailReceipt">
+          <Key>
+            <PropertyRef Name="billID" />
+            <PropertyRef Name="productID" />
+          </Key>
+          <Property Name="billID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="productID" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="quantity" Type="Int32" />
+          <NavigationProperty Name="Bill" Relationship="MOBILEMANAGEMENTModel.FK__DetailRec__billI__4BAC3F29" FromRole="DetailReceipt" ToRole="Bill" />
+          <NavigationProperty Name="Product" Relationship="MOBILEMANAGEMENTModel.FK__DetailRec__produ__4CA06362" FromRole="DetailReceipt" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK__DetailRec__billI__4BAC3F29">
+          <End Type="MOBILEMANAGEMENTModel.Bill" Role="Bill" Multiplicity="1" />
+          <End Type="MOBILEMANAGEMENTModel.DetailReceipt" Role="DetailReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Bill">
+              <PropertyRef Name="billID" />
+            </Principal>
+            <Dependent Role="DetailReceipt">
+              <PropertyRef Name="billID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__DetailRec__produ__4CA06362">
+          <End Type="MOBILEMANAGEMENTModel.Product" Role="Product" Multiplicity="1" />
+          <End Type="MOBILEMANAGEMENTModel.DetailReceipt" Role="DetailReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="ProductID" />
+            </Principal>
+            <Dependent Role="DetailReceipt">
+              <PropertyRef Name="productID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -631,17 +565,6 @@
                 <ScalarProperty Name="username" ColumnName="username" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="role" ColumnName="role" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Bills">
-            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.Bill">
-              <MappingFragment StoreEntitySet="Bill">
-                <ScalarProperty Name="billID" ColumnName="billID" />
-                <ScalarProperty Name="customerID" ColumnName="customerID" />
-                <ScalarProperty Name="productID" ColumnName="productID" />
-                <ScalarProperty Name="total" ColumnName="total" />
-                <ScalarProperty Name="outDate" ColumnName="outDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -665,16 +588,6 @@
                 <ScalarProperty Name="staffID" ColumnName="staffID" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DetailReceipts">
-            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.DetailReceipt">
-              <MappingFragment StoreEntitySet="DetailReceipt">
-                <ScalarProperty Name="billID" ColumnName="billID" />
-                <ScalarProperty Name="staffID" ColumnName="staffID" />
-                <ScalarProperty Name="quantity" ColumnName="quantity" />
-                <ScalarProperty Name="total" ColumnName="total" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -731,6 +644,28 @@
                 <ScalarProperty Name="quantity" ColumnName="quantity" />
                 <ScalarProperty Name="productID" ColumnName="productID" />
                 <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Bills">
+            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.Bill">
+              <MappingFragment StoreEntitySet="Bill">
+                <ScalarProperty Name="fullname" ColumnName="fullname" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="createDate" ColumnName="createDate" />
+                <ScalarProperty Name="total" ColumnName="total" />
+                <ScalarProperty Name="billID" ColumnName="billID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetailReceipts">
+            <EntityTypeMapping TypeName="MOBILEMANAGEMENTModel.DetailReceipt">
+              <MappingFragment StoreEntitySet="DetailReceipt">
+                <ScalarProperty Name="quantity" ColumnName="quantity" />
+                <ScalarProperty Name="productID" ColumnName="productID" />
+                <ScalarProperty Name="billID" ColumnName="billID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

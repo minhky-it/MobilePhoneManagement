@@ -132,5 +132,9 @@ namespace WebMVC_OrderForm.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult OrderConfirm()
+        {
+            return View("Confirm");
+        }
     }
 }

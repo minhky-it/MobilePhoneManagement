@@ -5,24 +5,30 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h3><strong>Order Iphone Online</strong></h3>
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("New Order", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Customer.fullname)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Product.vendorID)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.total)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.outDate)
+            @Html.DisplayNameFor(model => model.createDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fullname)
         </th>
         <th></th>
     </tr>
@@ -33,13 +39,19 @@
             @Html.DisplayFor(modelItem => item.total)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.outDate)
+            @Html.DisplayFor(modelItem => item.createDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Customer.fullname)
+            @Html.DisplayFor(modelItem => item.address)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Product.vendorID)
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fullname)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.billID }) |

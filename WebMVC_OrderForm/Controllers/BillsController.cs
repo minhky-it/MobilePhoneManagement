@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
@@ -15,20 +16,19 @@ namespace WebMVC_OrderForm.Controllers
         private MOBILEMANAGEMENT db = new MOBILEMANAGEMENT();
 
         // GET: Bills
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
-            var bills = db.Bills.Include(b => b.Customer).Include(b => b.Product);
-            return View(bills.ToList());
+            return View(await db.Bills.ToListAsync());
         }
 
         // GET: Bills/Details/5
-        public ActionResult Details(string id)
+        public async Task<ActionResult> Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bill bill = db.Bills.Find(id);
+            Bill bill = await db.Bills.FindAsync(id);
             if (bill == null)
             {
                 return HttpNotFound();
@@ -39,8 +39,6 @@ namespace WebMVC_OrderForm.Controllers
         // GET: Bills/Create
         public ActionResult Create()
         {
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullname");
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID");
             return View();
         }
 
@@ -49,34 +47,30 @@ namespace WebMVC_OrderForm.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "billID,customerID,productID,total,outDate")] Bill bill)
+        public async Task<ActionResult> Create([Bind(Include = "billID,total,createDate,address,email,phone,fullname")] Bill bill)
         {
             if (ModelState.IsValid)
             {
                 db.Bills.Add(bill);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullname", bill.customerID);
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", bill.productID);
             return View(bill);
         }
 
         // GET: Bills/Edit/5
-        public ActionResult Edit(string id)
+        public async Task<ActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bill bill = db.Bills.Find(id);
+            Bill bill = await db.Bills.FindAsync(id);
             if (bill == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullname", bill.customerID);
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", bill.productID);
             return View(bill);
         }
 
@@ -85,27 +79,25 @@ namespace WebMVC_OrderForm.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "billID,customerID,productID,total,outDate")] Bill bill)
+        public async Task<ActionResult> Edit([Bind(Include = "billID,total,createDate,address,email,phone,fullname")] Bill bill)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(bill).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-            ViewBag.customerID = new SelectList(db.Customers, "customerID", "fullname", bill.customerID);
-            ViewBag.productID = new SelectList(db.Products, "ProductID", "vendorID", bill.productID);
             return View(bill);
         }
 
         // GET: Bills/Delete/5
-        public ActionResult Delete(string id)
+        public async Task<ActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Bill bill = db.Bills.Find(id);
+            Bill bill = await db.Bills.FindAsync(id);
             if (bill == null)
             {
                 return HttpNotFound();
@@ -116,11 +108,11 @@ namespace WebMVC_OrderForm.Controllers
         // POST: Bills/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(string id)
+        public async Task<ActionResult> DeleteConfirmed(string id)
         {
-            Bill bill = db.Bills.Find(id);
+            Bill bill = await db.Bills.FindAsync(id);
             db.Bills.Remove(bill);
-            db.SaveChanges();
+            await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
 

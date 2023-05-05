@@ -42,4 +42,12 @@
 </table>
 @{string result = total.ToString("C0");}
 <h3>Total: @result</h3>
-<input type="submit" value="Order" class="button-add" />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+<div class="form-actions no-color">
+    <input type="button" value="Order" class="button-add" 
+     onclick="location.href='@Url.Action("Order", "CARTs")'"/>
+</div>
+}

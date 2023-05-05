@@ -26,14 +26,14 @@ namespace WebMVC_OrderForm.Models
         }
     
         public DbSet<Account> Accounts { get; set; }
-        public DbSet<Bill> Bills { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<DetailOrderForm> DetailOrderForms { get; set; }
-        public DbSet<DetailReceipt> DetailReceipts { get; set; }
         public DbSet<OrderForm> OrderForms { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Staff> Staffs { get; set; }
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<CART> CARTs { get; set; }
+        public DbSet<Bill> Bills { get; set; }
+        public DbSet<DetailReceipt> DetailReceipts { get; set; }
     }
 }

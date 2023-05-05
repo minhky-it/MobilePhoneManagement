@@ -16,7 +16,6 @@ namespace WebMVC_OrderForm.Models
     {
         public Customer()
         {
-            this.Bills = new HashSet<Bill>();
             this.CARTs = new HashSet<CART>();
         }
     
@@ -28,7 +27,6 @@ namespace WebMVC_OrderForm.Models
         public string paymentInfo { get; set; }
     
         public virtual Account Account { get; set; }
-        public virtual ICollection<Bill> Bills { get; set; }
         public virtual ICollection<CART> CARTs { get; set; }
     }
 }
