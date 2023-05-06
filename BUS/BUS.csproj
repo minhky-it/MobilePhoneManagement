@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BUS_Bill.cs" />
+    <Compile Include="BUS_DetailReceipt.cs" />
     <Compile Include="BUS_OrderForm.cs" />
     <Compile Include="BUS_Products.cs" />
     <Compile Include="BUS_Staff.cs" />

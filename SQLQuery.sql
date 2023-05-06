@@ -78,11 +78,7 @@ CREATE TABLE OrderForm(
 CREATE TABLE CART(
 	CustomerID varchar(50),
 	productID varchar(50),
-<<<<<<< HEAD
 	quantity int,
-=======
-	quantity int
->>>>>>> 6b1874a9c13a7093a1fbcd9acbb4bd8484c9dbff
 	price int,
 	PRIMARY KEY (CustomerID, productID),
 	FOREIGN KEY (CustomerID) REFERENCES Customer (CustomerID),
@@ -171,3 +167,5 @@ GO
 --SELECT * FROM OrderForm
 --SELECT * FROM DetailOrderForm WHERE orderID = 'O001'
 --SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'
+
+
