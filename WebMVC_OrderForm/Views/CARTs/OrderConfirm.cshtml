@@ -1,0 +1,79 @@
+﻿@model IEnumerable<WebMVC_OrderForm.Models.CART>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Confirm Order";
+}
+@{double total = 0;}
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-bordered" id="table-order-confirm">
+                <tr>
+                    <th>Product ID</th>
+                    <th>Phone Name</th>
+                    <th>Price</th>
+                    <th>Quanlity</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.productID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Product.name)
+                        </td>
+                        <td>
+                            @{ total += Convert.ToDouble(item.Product.price * item.quantity);}
+                            @{string price = Convert.ToDecimal(item.Product.price.ToString()).ToString("C0");}
+                            @price
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.quantity)
+                        </td>
+                    </tr>
+                }
+            </table>
+            @{string result = total.ToString("C0");}
+            <h3 id="order-result">Total: @result</h3>
+        </div>
+        <div class="col-6">
+            @using (Html.BeginForm("MakeOrder", "CARTs", FormMethod.Post))
+            {
+            <form>
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="address" class="form-label">Address</label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="total" name="total" value="@total" readonly hidden>
+                </div>
+                <div class="mb-3">
+                    <label for="payment" class="form-label">Payment Method</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="payment" id="cash" value="cash" checked>
+                        <label class="form-check-label" for="cash">
+                            Cash
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Order</button>
+            </form>
+            }
+        </div>
+    </div>
+</div>
+

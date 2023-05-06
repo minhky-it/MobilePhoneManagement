@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Succeed";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <h1>Order Created Successfully!</h1>
+                <p>
+                    Thank you for your order! An email has been sent to your email
+                    address with your order details. Please check your inbox and spam
+                    folder.
+                </p>
+                @Html.ActionLink("Back to Home", "../Home", null, new { id = "link-home" })
+            </div>
+        </div>
+    </div>
+</div>
