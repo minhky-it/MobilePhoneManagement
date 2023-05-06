@@ -32,6 +32,7 @@ namespace SE_Project
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lbPhone = new System.Windows.Forms.Label();
             this.txtLocation = new System.Windows.Forms.TextBox();
@@ -42,10 +43,8 @@ namespace SE_Project
             this.lbTotal = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.cbOrderID = new System.Windows.Forms.ComboBox();
             this.lbOrderID = new System.Windows.Forms.Label();
             this.txtExported = new System.Windows.Forms.TextBox();
@@ -54,30 +53,38 @@ namespace SE_Project
             this.lbReceiverName = new System.Windows.Forms.Label();
             this.txtReason = new System.Windows.Forms.TextBox();
             this.lbReason = new System.Windows.Forms.Label();
-            this.panel = new System.Windows.Forms.Panel();
-            this.btn_Print = new System.Windows.Forms.Button();
             this.btn_Complete = new System.Windows.Forms.Button();
             this.txtNo = new System.Windows.Forms.TextBox();
             this.lbDate = new System.Windows.Forms.Label();
             this.txtDate = new System.Windows.Forms.TextBox();
             this.lbNo = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.panel.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Gadugi", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(7, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(296, 19);
+            this.label6.TabIndex = 49;
+            this.label6.Text = "19, Nguyen Huu Tho, District 7, HCMC";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gadugi", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(214, 89);
+            this.label4.Location = new System.Drawing.Point(212, 92);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(317, 35);
-            this.label4.TabIndex = 26;
+            this.label4.TabIndex = 47;
             this.label4.Text = "Receiving Transaction";
             // 
             // lbPhone
@@ -111,102 +118,58 @@ namespace SE_Project
             // txtPaymentStatus
             // 
             this.txtPaymentStatus.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txtPaymentStatus.Location = new System.Drawing.Point(204, 631);
+            this.txtPaymentStatus.Location = new System.Drawing.Point(202, 634);
             this.txtPaymentStatus.Name = "txtPaymentStatus";
             this.txtPaymentStatus.Size = new System.Drawing.Size(223, 26);
-            this.txtPaymentStatus.TabIndex = 11;
+            this.txtPaymentStatus.TabIndex = 44;
             // 
             // lbStatusPayment
             // 
             this.lbStatusPayment.AutoSize = true;
             this.lbStatusPayment.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStatusPayment.Location = new System.Drawing.Point(34, 635);
+            this.lbStatusPayment.Location = new System.Drawing.Point(32, 638);
             this.lbStatusPayment.Name = "lbStatusPayment";
             this.lbStatusPayment.Size = new System.Drawing.Size(114, 20);
-            this.lbStatusPayment.TabIndex = 38;
+            this.lbStatusPayment.TabIndex = 55;
             this.lbStatusPayment.Text = "Payment status:";
             // 
             // txtTotal
             // 
             this.txtTotal.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txtTotal.Location = new System.Drawing.Point(204, 596);
+            this.txtTotal.Location = new System.Drawing.Point(202, 599);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(223, 26);
-            this.txtTotal.TabIndex = 10;
+            this.txtTotal.TabIndex = 43;
             // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.Location = new System.Drawing.Point(34, 600);
+            this.lbTotal.Location = new System.Drawing.Point(32, 603);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(164, 20);
-            this.lbTotal.TabIndex = 36;
+            this.lbTotal.TabIndex = 54;
             this.lbTotal.Text = "Total amount (In words):";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(431, 32);
+            this.label8.Location = new System.Drawing.Point(429, 35);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(316, 19);
-            this.label8.TabIndex = 31;
+            this.label8.TabIndex = 51;
             this.label8.Text = "(According to Circular No. 200/2014/TT-BTC";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Gadugi", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(531, 10);
+            this.label7.Location = new System.Drawing.Point(529, 13);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 19);
-            this.label7.TabIndex = 30;
+            this.label7.TabIndex = 50;
             this.label7.Text = "Form no: 02-VT";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Gadugi", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(9, 32);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(296, 19);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "19, Nguyen Huu Tho, District 7, HCMC";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Gadugi", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(9, 10);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 19);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "KD MOBILE STORE ";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtPhone);
-            this.groupBox1.Controls.Add(this.lbPhone);
-            this.groupBox1.Controls.Add(this.txtLocation);
-            this.groupBox1.Controls.Add(this.lbLocation);
-            this.groupBox1.Controls.Add(this.cbOrderID);
-            this.groupBox1.Controls.Add(this.lbOrderID);
-            this.groupBox1.Controls.Add(this.txtExported);
-            this.groupBox1.Controls.Add(this.lbExported);
-            this.groupBox1.Controls.Add(this.txtReceiverName);
-            this.groupBox1.Controls.Add(this.lbReceiverName);
-            this.groupBox1.Controls.Add(this.txtReason);
-            this.groupBox1.Controls.Add(this.lbReason);
-            this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(10, 156);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(758, 148);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Commodity information";
             // 
             // txtPhone
             // 
@@ -215,6 +178,16 @@ namespace SE_Project
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(164, 26);
             this.txtPhone.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Gadugi", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(7, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(151, 19);
+            this.label5.TabIndex = 48;
+            this.label5.Text = "KD MOBILE STORE ";
             // 
             // cbOrderID
             // 
@@ -225,7 +198,7 @@ namespace SE_Project
             this.cbOrderID.Name = "cbOrderID";
             this.cbOrderID.Size = new System.Drawing.Size(163, 27);
             this.cbOrderID.TabIndex = 12;
-            this.cbOrderID.SelectedIndexChanged += new System.EventHandler(this.cbOrderID_SelectedIndexChanged);
+            this.cbOrderID.SelectedIndexChanged += new System.EventHandler(this.cbOrderID_SelectedIndexChanged_1);
             // 
             // lbOrderID
             // 
@@ -291,109 +264,97 @@ namespace SE_Project
             this.lbReason.TabIndex = 1;
             this.lbReason.Text = "Reason for Issuing:";
             // 
-            // panel
-            // 
-            this.panel.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel.Controls.Add(this.btn_Print);
-            this.panel.Controls.Add(this.btn_Complete);
-            this.panel.Controls.Add(this.txtNo);
-            this.panel.Controls.Add(this.lbDate);
-            this.panel.Controls.Add(this.txtDate);
-            this.panel.Controls.Add(this.lbNo);
-            this.panel.Controls.Add(this.txtPaymentStatus);
-            this.panel.Controls.Add(this.lbStatusPayment);
-            this.panel.Controls.Add(this.txtTotal);
-            this.panel.Controls.Add(this.lbTotal);
-            this.panel.Controls.Add(this.label9);
-            this.panel.Controls.Add(this.label8);
-            this.panel.Controls.Add(this.label7);
-            this.panel.Controls.Add(this.label6);
-            this.panel.Controls.Add(this.label5);
-            this.panel.Controls.Add(this.label4);
-            this.panel.Controls.Add(this.groupBox1);
-            this.panel.Controls.Add(this.groupBox2);
-            this.panel.Location = new System.Drawing.Point(0, 0);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(784, 672);
-            this.panel.TabIndex = 3;
-            // 
-            // btn_Print
-            // 
-            this.btn_Print.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Print.Location = new System.Drawing.Point(600, 601);
-            this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(130, 35);
-            this.btn_Print.TabIndex = 13;
-            this.btn_Print.Text = "Print";
-            this.btn_Print.UseVisualStyleBackColor = true;
-            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
-            // 
             // btn_Complete
             // 
             this.btn_Complete.Font = new System.Drawing.Font("Franklin Gothic Medium", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Complete.Location = new System.Drawing.Point(460, 601);
+            this.btn_Complete.Location = new System.Drawing.Point(533, 623);
             this.btn_Complete.Name = "btn_Complete";
             this.btn_Complete.Size = new System.Drawing.Size(130, 35);
-            this.btn_Complete.TabIndex = 12;
+            this.btn_Complete.TabIndex = 45;
             this.btn_Complete.Text = "Confirm";
             this.btn_Complete.UseVisualStyleBackColor = true;
+            this.btn_Complete.Click += new System.EventHandler(this.btn_Complete_Click_1);
             // 
             // txtNo
             // 
             this.txtNo.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txtNo.Location = new System.Drawing.Point(610, 87);
+            this.txtNo.Location = new System.Drawing.Point(608, 90);
             this.txtNo.Name = "txtNo";
             this.txtNo.Size = new System.Drawing.Size(78, 26);
-            this.txtNo.TabIndex = 1;
+            this.txtNo.TabIndex = 40;
             // 
             // lbDate
             // 
             this.lbDate.AutoSize = true;
             this.lbDate.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDate.Location = new System.Drawing.Point(560, 122);
+            this.lbDate.Location = new System.Drawing.Point(558, 125);
             this.lbDate.Name = "lbDate";
             this.lbDate.Size = new System.Drawing.Size(40, 20);
-            this.lbDate.TabIndex = 39;
+            this.lbDate.TabIndex = 56;
             this.lbDate.Text = "Date";
             // 
             // txtDate
             // 
             this.txtDate.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.txtDate.Location = new System.Drawing.Point(610, 119);
+            this.txtDate.Location = new System.Drawing.Point(608, 122);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(105, 26);
-            this.txtDate.TabIndex = 2;
+            this.txtDate.TabIndex = 41;
             // 
             // lbNo
             // 
             this.lbNo.AutoSize = true;
             this.lbNo.Font = new System.Drawing.Font("Franklin Gothic Medium", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNo.Location = new System.Drawing.Point(560, 90);
+            this.lbNo.Location = new System.Drawing.Point(558, 93);
             this.lbNo.Name = "lbNo";
             this.lbNo.Size = new System.Drawing.Size(30, 20);
-            this.lbNo.TabIndex = 32;
+            this.lbNo.TabIndex = 52;
             this.lbNo.Text = "No.";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(391, 53);
+            this.label9.Location = new System.Drawing.Point(389, 56);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(388, 19);
-            this.label9.TabIndex = 33;
+            this.label9.TabIndex = 53;
             this.label9.Text = "dated December 22nd 2014 of the Ministry of Finance)";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtPhone);
+            this.groupBox1.Controls.Add(this.lbPhone);
+            this.groupBox1.Controls.Add(this.txtLocation);
+            this.groupBox1.Controls.Add(this.lbLocation);
+            this.groupBox1.Controls.Add(this.cbOrderID);
+            this.groupBox1.Controls.Add(this.lbOrderID);
+            this.groupBox1.Controls.Add(this.txtExported);
+            this.groupBox1.Controls.Add(this.lbExported);
+            this.groupBox1.Controls.Add(this.txtReceiverName);
+            this.groupBox1.Controls.Add(this.lbReceiverName);
+            this.groupBox1.Controls.Add(this.txtReason);
+            this.groupBox1.Controls.Add(this.lbReason);
+            this.groupBox1.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(8, 159);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(758, 148);
+            this.groupBox1.TabIndex = 42;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Commodity information";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Franklin Gothic Medium", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(13, 314);
+            this.groupBox2.Location = new System.Drawing.Point(11, 317);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Size = new System.Drawing.Size(755, 269);
-            this.groupBox2.TabIndex = 15;
+            this.groupBox2.TabIndex = 46;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detailed list of goods";
             // 
@@ -402,7 +363,7 @@ namespace SE_Project
             this.dataGridView.BackgroundColor = System.Drawing.SystemColors.ScrollBar;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -411,7 +372,7 @@ namespace SE_Project
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -422,7 +383,7 @@ namespace SE_Project
             this.dataGridView.Name = "dataGridView";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gadugi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -436,22 +397,38 @@ namespace SE_Project
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 672);
-            this.Controls.Add(this.panel);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.txtPaymentStatus);
+            this.Controls.Add(this.lbStatusPayment);
+            this.Controls.Add(this.txtTotal);
+            this.Controls.Add(this.lbTotal);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btn_Complete);
+            this.Controls.Add(this.txtNo);
+            this.Controls.Add(this.lbDate);
+            this.Controls.Add(this.txtDate);
+            this.Controls.Add(this.lbNo);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "Export";
             this.Text = "Export";
             this.Load += new System.EventHandler(this.Export_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel.ResumeLayout(false);
-            this.panel.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbPhone;
         private System.Windows.Forms.TextBox txtLocation;
@@ -462,10 +439,8 @@ namespace SE_Project
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbOrderID;
         private System.Windows.Forms.Label lbOrderID;
         private System.Windows.Forms.TextBox txtExported;
@@ -474,14 +449,13 @@ namespace SE_Project
         private System.Windows.Forms.Label lbReceiverName;
         private System.Windows.Forms.TextBox txtReason;
         private System.Windows.Forms.Label lbReason;
-        private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.Button btn_Complete;
         private System.Windows.Forms.TextBox txtNo;
         private System.Windows.Forms.Label lbDate;
         private System.Windows.Forms.TextBox txtDate;
         private System.Windows.Forms.Label lbNo;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dataGridView;
     }

@@ -28,5 +28,12 @@ namespace DAL
             return Connection.selectQuery(s);
         }
 
+        // select by orderID
+        public DataTable selectByOrderID (string orderID)
+        {
+            string sql = String.Format("SELECT * FROM OrderForm WHERE orderID = '{0}'", orderID);
+            return Connection.selectQuery(sql);
+        }
+
     }
 }

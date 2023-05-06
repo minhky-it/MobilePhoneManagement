@@ -9,6 +9,9 @@ namespace SE_Project
     public partial class WareHouse : Form
     {
         BUS_Products products;
+        BUS_WareHouse wareHouse;
+        BUS_DetailWareHouse detailWareHouse;
+
         PrintPreviewDialog printPreviewDialog = new  PrintPreviewDialog();
         PrintDocument printDocument = new PrintDocument();
         public WareHouse()
@@ -27,9 +30,8 @@ namespace SE_Project
             Print(this.panel);
         }
 
-        private void btn_Complete_Click(object sender, EventArgs e)
+        public void addData()
         {
-            // Add data from DataGridView to MSSQL
             string iD, name, quantity, type, price, color;
 
             for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
@@ -44,6 +46,24 @@ namespace SE_Project
                 products = new BUS_Products(iD, txtVendorID.Text, name, quantity, type, price, color);
                 products.addQuery();
             }
+
+            wareHouse = new BUS_WareHouse(txtID.Text, txtDate.Text);
+            wareHouse.addQuery();
+
+            for (int i = 0; i < dataGridView.Rows.Count - 1; i++)
+            {
+                iD = dataGridView.Rows[i].Cells[0].Value.ToString();
+
+                detailWareHouse = new BUS_DetailWareHouse(txtID.Text, iD);
+                detailWareHouse.addQuery();
+            }
+        }
+
+        private void btn_Complete_Click(object sender, EventArgs e)
+        {
+            // Add data from DataGridView to MSSQL
+            addData();
+            this.Close();
         }
 
         Bitmap memory;

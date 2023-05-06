@@ -38,6 +38,19 @@ CREATE TABLE Product(
 	FOREIGN KEY (vendorID) REFERENCES Vendor(vendorID)
 )
 
+CREATE TABLE WAREHOUSE (
+	warehouseID varchar(50) PRIMARY KEY,
+	dateInput varchar(30)
+)
+
+CREATE TABLE DETAIL_WAREHOUSE (
+	warehouseID varchar(50),
+	productID varchar(50),
+	PRIMARY KEY (warehouseID, productID),
+	FOREIGN KEY (warehouseID) REFERENCES WAREHOUSE (warehouseID),
+	FOREIGN KEY (productID) REFERENCES Product (productID)
+)
+
 CREATE TABLE Customer(
 	customerID varchar(50) PRIMARY KEY,
 	fullname varchar(255),
@@ -164,6 +177,7 @@ INSERT INTO Account VALUES ('A001', 'Activated', 'dat2302', '123456', 'admin'),
 INSERT INTO Customer VALUES ('C001', 'Customer01', 'example@gmail.com', '0123456789', 'A003','VNPAY')
 
 GO
+
 --SELECT * FROM OrderForm
 --SELECT * FROM DetailOrderForm WHERE orderID = 'O001'
 --SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'

@@ -44,10 +44,12 @@
     <Compile Include="Connection.cs" />
     <Compile Include="DAL_Bill.cs" />
     <Compile Include="DAL_DetailReceipt.cs" />
+    <Compile Include="DAL_DetailWareHouse.cs" />
     <Compile Include="DAL_OrderForm.cs" />
     <Compile Include="DAL_Products.cs" />
     <Compile Include="DAL_Staff.cs" />
     <Compile Include="DAL_Vendor.cs" />
+    <Compile Include="DAL_WareHouse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
