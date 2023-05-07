@@ -11,8 +11,7 @@ namespace SE_Project
     {
         private BUS_Products products = new BUS_Products();
         private BUS_OrderForm orderForm = new BUS_OrderForm();
-        PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
-        PrintDocument printDocument = new PrintDocument();
+
         public Export()
         {
             InitializeComponent();
@@ -42,37 +41,20 @@ namespace SE_Project
             showOrderProducts();
         }
 
-        private void cbOrderID_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbOrderID_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             formload();
         }
 
-        private void btn_Print_Click(object sender, EventArgs e)
+        private void btn_Complete_Click_1(object sender, EventArgs e)
         {
-            Print(this.panel);
+            Delivery_Data();
         }
 
-        Bitmap memory;
-        public void getPrintArea(Panel pnl)
+        public void Delivery_Data()
         {
-            memory = new Bitmap(pnl.Width, pnl.Height);
-            pnl.DrawToBitmap(memory, new Rectangle(0, 0, pnl.Width, pnl.Height));
-        }
-
-        public void printDoc_printPage(object sender, PrintPageEventArgs e)
-        {
-            Rectangle pageArea = e.PageBounds;
-            e.Graphics.DrawImage(memory, (pageArea.Width / 2) - (this.panel.Width / 2), this.panel.Location.Y);
-        }
-
-        public void Print(Panel pnl)
-        {
-            PrinterSettings printerSettings = new PrinterSettings();
-            panel = pnl;
-            getPrintArea(pnl);
-            printPreviewDialog.Document = printDocument;
-            printDocument.PrintPage += new PrintPageEventHandler(printDoc_printPage);
-            printPreviewDialog.ShowDialog();
+            DeliveryBill deliveryBill = new DeliveryBill(txtReceiverName.Text, txtPhone.Text, txtDate.Text, cbOrderID.Text);
+            deliveryBill.Show();
         }
     }
 }

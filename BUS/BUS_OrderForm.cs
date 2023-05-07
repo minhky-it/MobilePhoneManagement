@@ -17,9 +17,16 @@ namespace BUS
         {
             orderform.addQuery();
         }
+
         public DataTable selectQuery()
         {
             return orderform.selectQuery();
+        }
+
+        // select by OrderID
+        public DataTable selectByOrderID(string orderID)
+        {
+            return orderform.selectByOrderID(orderID);
         }
     }
 }
