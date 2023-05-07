@@ -168,4 +168,4 @@ GO
 --SELECT * FROM DetailOrderForm WHERE orderID = 'O001'
 --SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'
 
-
+SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'
