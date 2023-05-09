@@ -174,10 +174,45 @@ INSERT INTO Account VALUES ('A001', 'Activated', 'dat2302', '123456', 'admin'),
 						   ('A002', 'Activated', 'kyvt03', '123456', 'admin'),
 						   ('A003', 'Activated', 'cus001', '123456', 'customer')
 						   
+
 INSERT INTO Customer VALUES ('C001', 'Customer01', 'example@gmail.com', '0123456789', 'A003','VNPAY')
 
-GO
+INSERT INTO WAREHOUSE VALUES ('W001', '02-13-2023'),
+						     ('W002', '04-14-2022'),
+							 ('W003', '03-20-2023'),
+							 ('W004', '12-25-2022'),
+							 ('W005', '07-15-2022'),
+							 ('W006', '02-09-2023'),
+							 ('W007', '11-11-2022'),
+							 ('W008', '02-29-2023'),
+							 ('W009', '05-19-2022'),
+							 ('W010', '06-17-2022'),
+							 ('W011', '04-02-2023'),
+							 ('W012','05-14-2022'),
+							 ('W013','02-11-2023'),
+							 ('W014','12-21-2022'),
+							 ('W015','03-30-2023'),
+							 ('W016','08-17-2022'),
+							 ('W017','05-11-2022'),
+							 ('W018','08-17-2022'),
+							 ('W019','12-27-2022'),
+							 ('W020','12-26-2022')
 
+INSERT INTO DETAIL_WAREHOUSE VALUES ('W001', 'P001'),
+									('W001', 'P002'),
+									('W001', 'P003'),
+									('W001', 'P004'),
+									('W001', 'P005'),
+									('W001', 'P006'),
+									('W001', 'P007'),
+									('W001', 'P008'),
+									('W001', 'P009'),
+									('W001', 'P010'),
+									('W001', 'P011'),
+									('W001', 'P012')
+
+GO
+SELECT * FROM WAREHOUSE
 --SELECT * FROM OrderForm
 --SELECT * FROM DetailOrderForm WHERE orderID = 'O001'
 --SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'
