@@ -28,11 +28,11 @@ namespace DAL
 
         public DataTable topselling()
         {
-            string s = "SELECT p.ProductID, p.vendorID, p.name, p.type, p.price, p.color "+
+            string s = "SELECT p.ProductID, p.vendorID, p.name, p.type, p.price, p.color, d.quantity "+
                         "FROM Product p "+
                         "JOIN DetailReceipt d ON p.ProductID = d.productID "+
                         "WHERE d.productID = p.productID "+
-                        "GROUP BY p.ProductID, p.vendorID, p.name, p.type, p.price, p.color " +
+                        "GROUP BY p.ProductID, p.vendorID, p.name, p.type, p.price, p.color, d.quantity " +
                         "ORDER BY SUM(d.quantity) DESC";
             return Connection.selectQuery(s);
         }

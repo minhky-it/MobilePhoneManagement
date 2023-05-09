@@ -6,8 +6,9 @@ namespace BUS
     public class BUS_OrderForm
     {
         private DAL_OrderForm orderform;
-        public BUS_OrderForm() {
-            orderform = new DAL_OrderForm("","","","","");
+        public BUS_OrderForm()
+        {
+            orderform = new DAL_OrderForm("", "", "", "", "");
         }
         public BUS_OrderForm(string id, string address, string statusPayment, string status, string delivery)
         {
@@ -27,6 +28,16 @@ namespace BUS
         public DataTable selectByOrderID(string orderID)
         {
             return orderform.selectByOrderID(orderID);
+        }
+        //Detail of Order
+        public DataTable selectQueryID(string id)
+        {
+            return orderform.selectQueryID(id);
+        }
+
+        public DataTable selectQueryGoodsOut()
+        {
+            return orderform.selectQueryGoodsOut();
         }
     }
 }
