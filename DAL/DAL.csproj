@@ -45,6 +45,7 @@
     <Compile Include="DAL_Bill.cs" />
     <Compile Include="DAL_DetailReceipt.cs" />
     <Compile Include="DAL_DetailWareHouse.cs" />
+    <Compile Include="DAL_Login.cs" />
     <Compile Include="DAL_OrderForm.cs" />
     <Compile Include="DAL_Products.cs" />
     <Compile Include="DAL_Staff.cs" />

@@ -26,12 +26,20 @@ namespace BUS
         {
             return wareHouse.selectQuery();
         }
-        //select detail of warehouse
+
+        public DataTable getWarehouseID()
+        {
+            return wareHouse.getWarehouseID();
+        }
+
+
+        // select detail of warehouse
         public DataTable selectQueryID(string id)
         {
             return wareHouse.selectQueryID(id);
         }
-        //select all of warehouse
+
+        // select all of warehouse
         public DataTable selectQueryDetailAll()
         {
             return wareHouse.selectQueryDetailAll();

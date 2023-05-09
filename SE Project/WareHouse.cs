@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Windows.Forms;
@@ -9,11 +10,13 @@ namespace SE_Project
     public partial class WareHouse : Form
     {
         BUS_Products products;
-        BUS_WareHouse wareHouse;
         BUS_DetailWareHouse detailWareHouse;
+        BUS_Vendor BUS_Vendor = new BUS_Vendor();
+        BUS_WareHouse wareHouse = new BUS_WareHouse();
 
-        PrintPreviewDialog printPreviewDialog = new  PrintPreviewDialog();
         PrintDocument printDocument = new PrintDocument();
+        PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+
         public WareHouse()
         {
             InitializeComponent();
@@ -21,8 +24,41 @@ namespace SE_Project
 
         private void mainForm_Load(object sender, EventArgs e)
         {
-            txtID.Focus();
+            txtDate.Focus();
+            txtID.Enabled = false;
+            showID();
+            showVendorID();
             products = new BUS_Products("","","","","","","");
+        }
+
+        // Show vendorID current exist
+        private void showVendorID()
+        {
+            DataTable tb = BUS_Vendor.selectQuery();
+            cbVendorID.DataSource = tb;
+            cbVendorID.ValueMember = "vendorID";
+        }
+
+        // Show top 1 of warehouseID
+        public void showID()
+        {
+            DataTable tb = wareHouse.getWarehouseID();
+            if (tb.Rows.Count > 0)
+            {
+                string res = tb.Rows[0][0].ToString();
+                int stt = int.Parse(res.Substring(2, 2)) + 1;
+                if (stt < 10)
+                    res = "W00" + stt.ToString();
+                else if (stt < 100)
+                    res = "W0" + stt.ToString();
+                else
+                    res = "W" + stt.ToString();
+                txtID.Text = res;
+            }
+            else
+            {
+                txtID.Text = "W001";
+            }
         }
 
         private void btn_Print_Click(object sender, EventArgs e)
@@ -43,7 +79,7 @@ namespace SE_Project
                 price = dataGridView.Rows[i].Cells[4].Value.ToString();
                 color = dataGridView.Rows[i].Cells[5].Value.ToString();
 
-                products = new BUS_Products(iD, txtVendorID.Text, name, quantity, type, price, color);
+                products = new BUS_Products(iD, cbVendorID.Text, name, quantity, type, price, color);
                 products.addQuery();
             }
 
@@ -61,9 +97,64 @@ namespace SE_Project
 
         private void btn_Complete_Click(object sender, EventArgs e)
         {
-            // Add data from DataGridView to MSSQL
-            addData();
-            this.Close();
+            string dateInput = txtDate.Text;
+
+            string vendorName = txtVendorName.Text;
+            string circular = txtCircular.Text;
+            string inputStock = txtStock.Text;
+            string location = txtLocation.Text;
+
+            int dataTable = dataGridView.Rows.Count;
+            string total = txtTotal.Text;
+            string preparedBy = txtPreparedName.Text;
+
+            if(dateInput == "")
+            {
+                MessageBox.Show("Please, Enter the import date");
+                txtDate.Focus();
+            } 
+            else if (vendorName == "")
+            {
+                MessageBox.Show("Please, Enter the vendor name");
+                txtVendorName.Focus();
+            }
+            else if (circular == "")
+            {
+                MessageBox.Show("Please, Enter the circular");
+                txtCircular.Focus();
+            }
+            else if (inputStock == "")
+            {
+                MessageBox.Show("Please, Enter the input at stock");
+                txtStock.Focus();
+            }
+            else if (location == "")
+            {
+                MessageBox.Show("Please, Enter the location of stock");
+                txtLocation.Focus();
+            }
+            else if (dataTable <= 1)
+            {
+                MessageBox.Show("Please, Enter the list of goods");
+                dataGridView.Focus();
+            }
+            else if (total == "")
+            {
+                MessageBox.Show("Please, Enter the total amount");
+                txtTotal.Focus();
+            }
+            else if (preparedBy == "")
+            {
+                MessageBox.Show("Please, Enter the accountant name");
+                txtPreparedName.Focus();
+            }
+            else
+            {
+                // Add data from DataGridView to MSSQL
+                addData();
+                MessageBox.Show("Import Successfully");
+                this.Close();
+            }
         }
 
         Bitmap memory;

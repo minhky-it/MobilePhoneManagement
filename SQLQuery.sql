@@ -212,7 +212,10 @@ INSERT INTO DETAIL_WAREHOUSE VALUES ('W001', 'P001'),
 									('W001', 'P012')
 
 GO
-SELECT * FROM WAREHOUSE
+select top 1 warehouseID from WAREHOUSE order by warehouseID desc
+SELECT * FROM DETAIL_WAREHOUSE
+SELECT * FROM Product
+--SELECT * FROM WAREHOUSE
 --SELECT * FROM OrderForm
 --SELECT * FROM DetailOrderForm WHERE orderID = 'O001'
 --SELECT P.* FROM Product P INNER JOIN DetailOrderForm D ON P.productID = D.productID WHERE D.orderID = 'O001'

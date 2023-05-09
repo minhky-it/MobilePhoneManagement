@@ -48,7 +48,68 @@ namespace SE_Project
 
         private void btn_Complete_Click_1(object sender, EventArgs e)
         {
-            Delivery_Data();
+            string ID = txtNo.Text;
+            string dateInput = txtDate.Text;
+
+            string receiverName = txtReceiverName.Text;
+            string phone = txtPhone.Text;
+            string reason = txtReason.Text;
+            string exportAt = txtExported.Text;
+            string location = txtLocation.Text;
+
+            string total = txtTotal.Text;
+            string statusPayment = txtPaymentStatus.Text;
+
+            if (ID == "")
+            {
+                MessageBox.Show("Please, Enter the No.");
+                txtNo.Focus();
+            }
+            else if (dateInput == "")
+            {
+                MessageBox.Show("Please, Enter the export date");
+                txtDate.Focus();
+            }
+            else if (receiverName == "")
+            {
+                MessageBox.Show("Please, Enter the receiver name");
+                txtReceiverName.Focus();
+            }
+            else if (phone == "")
+            {
+                MessageBox.Show("Please, Enter the phone number");
+                txtPhone.Focus();
+            }
+            else if (reason == "")
+            {
+                MessageBox.Show("Please, Enter the export reason");
+                txtReason.Focus();
+            }
+            else if (exportAt == "")
+            {
+                MessageBox.Show("Please, Enter the export at");
+                txtExported.Focus();
+            }
+            else if (location == "")
+            {
+                MessageBox.Show("Please, Enter the location");
+                txtLocation.Focus();
+            }
+            else if (total == "")
+            {
+                MessageBox.Show("Please, Enter the total amount");
+                txtTotal.Focus();
+            }
+            else if (statusPayment == "")
+            {
+                MessageBox.Show("Please, Enter the payment status");
+                txtPaymentStatus.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Export Successfully");
+                Delivery_Data();
+            }
         }
 
         public void Delivery_Data()

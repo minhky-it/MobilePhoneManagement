@@ -10,6 +10,10 @@ namespace DAL
     public class DAL_Vendor
     {
         private DTO_Vendor vendor;
+        public DAL_Vendor()
+        {
+            vendor = new DTO_Vendor("","","","");
+        }
         public DAL_Vendor(string id, string name, string phone, string email)
         {
             vendor = new DTO_Vendor(id, name, phone, email);

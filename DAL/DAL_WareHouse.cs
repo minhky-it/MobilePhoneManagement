@@ -24,6 +24,13 @@ namespace DAL
             return Connection.selectQuery(s);
         }
 
+        // get Datatable desc order
+        public DataTable getWarehouseID()
+        {
+            string s = "select top 1 warehouseID from WAREHOUSE order by warehouseID desc";
+            return Connection.selectQuery(s);
+        }
+
         //select detail of warehouse
         public DataTable selectQueryID(string id)
         {
