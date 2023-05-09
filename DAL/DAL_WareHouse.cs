@@ -23,5 +23,19 @@ namespace DAL
             string s = "SELECT * FROM WAREHOUSE";
             return Connection.selectQuery(s);
         }
+
+        //select detail of warehouse
+        public DataTable selectQueryID(string id)
+        {
+            string s = string.Format("SELECT * FROM DETAIL_WAREHOUSE WHERE warehouseID = '{0}'", id);
+            return Connection.selectQuery(s);
+        }
+
+        //select all of warehouse
+        public DataTable selectQueryDetailAll()
+        {
+            string s = "SELECT * FROM DETAIL_WAREHOUSE";
+            return Connection.selectQuery(s);
+        }
     }
 }

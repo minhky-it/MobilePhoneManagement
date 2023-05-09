@@ -28,6 +28,18 @@ namespace DAL
             return Connection.selectQuery(s);
         }
 
+        //Detail of Order
+        public DataTable selectQueryID(string id)
+        {
+            string s = String.Format("SELECT * FROM DetailOrderForm WHERE orderID = '{0}'", id);
+            return Connection.selectQuery(s);
+        }
+        //All goods out
+        public DataTable selectQueryGoodsOut()
+        {
+            string s = String.Format("SELECT D.* FROM DetailOrderForm D INNER JOIN OrderForm X ON X.orderID = D.orderID WHERE X.status = 'delivered'");
+            return Connection.selectQuery(s);
+        }
         // select by orderID
         public DataTable selectByOrderID (string orderID)
         {

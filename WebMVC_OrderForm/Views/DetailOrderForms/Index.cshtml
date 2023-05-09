@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_LayoutAgent.cshtml";
 }
 
-<div class="title_"><strong>Details of order: @ViewBag.orderID</strong></div>  
+<div class="title_"><strong>Details of order: @ViewBag.orderID</strong></div>
 
 <p>
-    @Html.ActionLink("Add New Product", "Create", new { orderID= @ViewBag.orderID })
+    @Html.ActionLink("Add New Product", "Create", new { orderID = @ViewBag.orderID })
 </p>
 <table class="table">
     <tr>
@@ -55,5 +55,5 @@
             </td>
         </tr>
     }
-
 </table>
+@Html.ActionLink("Back to list", "../OrderForms")
